@@ -5,6 +5,7 @@ int staticSizeMin = 1;
 int staticSizeMax = 3;
 color staticColor = color(200);
 
+//this all the info about the two paddles. how fast it will go, size, colour
 int paddleX;
 int paddleY;
 int paddleVX;
@@ -13,7 +14,8 @@ int paddleWidth = 128;
 int paddleHeight = 16;
 color paddleColor = color(255);
 
-int ballX;
+//this is the info about the ball. how fast it will go, size, colour
+int ballX; 
 int ballY;
 int ballVX;
 int ballVY;
@@ -53,6 +55,7 @@ void draw() {
   drawBall();
 }
 
+//info about the static
 void drawStatic() {
   for (int i = 0; i < numStatic; i++) {
    float x = random(0,width);
@@ -133,6 +136,7 @@ void handleBallHitWall() {
   }
 }
 
+// without these you cannot move the paddle right or left 
 void keyPressed() {
   if (keyCode == LEFT) {
     paddleVX = -paddleSpeed;
