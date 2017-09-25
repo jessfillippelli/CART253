@@ -13,6 +13,7 @@ int paddleSpeed = 10;
 int paddleWidth = 128;
 int paddleHeight = 16;
 color paddleColor = color(255);
+color ballcolor; //CHANGED
 
 //this is the info about the ball. how fast it will go, size, colour
 int ballX; 
@@ -90,7 +91,7 @@ void drawPaddle() {
 void drawBall() {
   rectMode(CENTER);
   noStroke();
-  fill(ballColor);
+  fill(ballcolor);
   rect(ballX, ballY, ballSize, ballSize);
 }
 
@@ -98,7 +99,12 @@ void handleBallHitPaddle() {
   if (ballOverlapsPaddle()) {
     ballY = paddleY - paddleHeight/2 - ballSize/2;
     ballVY = -ballVY;
-    ballColor = color(255,0,0); //CHANGED 
+    //ballColor = color(255,0,0); //CHANGED #1
+ballcolor = color(random(255),0,0);//CHANGED #2
+//float ballcolor = random(0,100);
+//float ballcolor = random(0,100);
+//background(red,green,blue);
+
   }
 }
 
