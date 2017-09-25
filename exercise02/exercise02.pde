@@ -98,8 +98,17 @@ void handleBallHitPaddle() {
   if (ballOverlapsPaddle()) {
     ballY = paddleY - paddleHeight/2 - ballSize/2;
     ballVY = -ballVY;
+    ballColor = color(255,0,0); //CHANGED 
   }
 }
+
+//void ballHitsPaddle(){
+//  if (ballHitsPaddle()) {
+//    ballY = paddleY - paddleHeight/5 - ballSize/5; 
+//    ballVY = -ballVY;
+//    color; (255,0,0);
+//  }
+//}
 
 boolean ballOverlapsPaddle() {
   if (ballX - ballSize/2 > paddleX - paddleWidth/2 && ballX + ballSize/2 < paddleX + paddleWidth/2) {
