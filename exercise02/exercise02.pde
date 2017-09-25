@@ -4,6 +4,9 @@ int numStatic = 1000;
 int staticSizeMin = 1;
 int staticSizeMax = 3;
 color staticColor = color(200);
+int circleSize = 27; //ADDED
+color circleColor = color(255,105,180,127); //ADDED
+int numCircle = 500; //ADDED 
 
 //this all the info about the two paddles. how fast it will go, size, colour
 int paddleX;
@@ -13,7 +16,7 @@ int paddleSpeed = 10;
 int paddleWidth = 128;
 int paddleHeight = 16;
 color paddleColor = color(255);
-color ballcolor; //CHANGED
+//color ballcolor; //CHANGED
 
 //this is the info about the ball. how fast it will go, size, colour
 int ballX; 
@@ -51,10 +54,14 @@ void draw() {
 
   updatePaddle();
   updateBall();
-
+  
+  
+  
   drawPaddle();
   drawBall();
+drawCircle();
 }
+
 
 //info about the static
 void drawStatic() {
@@ -66,6 +73,18 @@ void drawStatic() {
    rect(x,y,staticSize,staticSize);
   }
 }
+
+//THE LOOP I CREATED
+void drawCircle() {
+  for (int i = 0; i < numCircle; i++) {
+   float x = random(0,width);
+   float y = random(0,height);
+   fill(circleColor);
+   ellipse(x,y,circleSize,circleSize);
+  }
+}
+
+
 
 void updatePaddle() {
   paddleX += paddleVX;  
@@ -91,7 +110,7 @@ void drawPaddle() {
 void drawBall() {
   rectMode(CENTER);
   noStroke();
-  fill(ballcolor);
+  fill(ballColor);
   rect(ballX, ballY, ballSize, ballSize);
 }
 
@@ -100,7 +119,7 @@ void handleBallHitPaddle() {
     ballY = paddleY - paddleHeight/2 - ballSize/2;
     ballVY = -ballVY;
     //ballColor = color(255,0,0); //CHANGED #1
-ballcolor = color(random(255),0,0);//CHANGED #2 I MADE IT RANDOME SHADE OF RED EVERYTIME IT HIT PADDLE 
+ballColor = color(random(255),0,0);//CHANGED #2 I MADE IT RANDOME SHADE OF RED EVERYTIME IT HIT PADDLE 
 //float ballcolor = random(0,100);
 //float ballcolor = random(0,100);
 //background(red,green,blue);
