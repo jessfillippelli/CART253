@@ -100,7 +100,7 @@ void handleBallHitPaddle() {
     ballY = paddleY - paddleHeight/2 - ballSize/2;
     ballVY = -ballVY;
     //ballColor = color(255,0,0); //CHANGED #1
-ballcolor = color(random(255),0,0);//CHANGED #2
+ballcolor = color(random(255),0,0);//CHANGED #2 I MADE IT RANDOME SHADE OF RED EVERYTIME IT HIT PADDLE 
 //float ballcolor = random(0,100);
 //float ballcolor = random(0,100);
 //background(red,green,blue);
