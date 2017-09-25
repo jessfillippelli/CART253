@@ -26,6 +26,7 @@ int ballVY;
 int ballSpeed = 5;
 int ballSize = 16;
 color ballColor = color(255);
+int newBallSpeed = 30; //ADDED
 
 void setup() {
   size(640, 480);
@@ -98,6 +99,8 @@ void updateBall() {
   handleBallHitPaddle();
   handleBallHitWall();
   handleBallOffBottom();
+  handleBallOffScreen();
+  
 }
 
 void drawPaddle() {
@@ -134,6 +137,28 @@ ballColor = color(random(255),0,0);//CHANGED #2 I MADE IT RANDOME SHADE OF RED E
 //    color; (255,0,0);
 //  }
 //}
+
+
+//NEW FUNCTION I MADE
+void handleBallOffScreen(){
+  if (ballHitsTheRightSide()){
+    ballY = paddleY - paddleHeight/2 - ballSize/2;
+    ballVY = -ballVY;
+    newBallSpeed = 30;
+  }
+}
+
+
+//NEW FUNCTION I MADE
+boolean ballHitsTheRightSide(){
+    if (ballX - ballSize/5 > paddleX - paddleWidth/5 && ballX + ballSize/2 < paddleX + paddleWidth/2) {
+    if (ballY > paddleY - paddleHeight/5) {
+      return true;
+    }
+  }
+  return false;
+}
+
 
 boolean ballOverlapsPaddle() {
   if (ballX - ballSize/2 > paddleX - paddleWidth/2 && ballX + ballSize/2 < paddleX + paddleWidth/2) {
