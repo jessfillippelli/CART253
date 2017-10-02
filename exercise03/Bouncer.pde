@@ -4,15 +4,15 @@ class Bouncer {
 
   int x;
   int y;
-  int vx;
-  int vy;
+  float vx; // CHNAGED 
+  float vy; // CHNAGED 
   int size;
   color fillColor;
   color defaultColor;
   color hoverColor;
-  float red ;
-  float green;
-  float blue;
+  float red ; //ADDED
+  float green; //ADDED
+  float blue; //ADDED
 
 
   //all the info about the bouncer
@@ -28,6 +28,7 @@ class Bouncer {
     //fillcolor (red,green,blue);
   }
 
+
   void update() {
     x += vx;
     y += vy;
@@ -42,19 +43,19 @@ class Bouncer {
     //< less than || OR, > greater than
     if (x - size/2 < 0 || x + size/2 > width) {
       vx = -vx;
+
+      red = random(50, 100); // CHANGED MADE THE COLOR OF THE BALL TO RANDOM WHEN IT HIT THE WALL 
+      green = random(25, 200);
+      blue = random(30, 100);
+      defaultColor = color(red, green, blue);
     }
 
     //< less than || OR and > greater than
     if (y - size/2 < 0 || y + size/2 > height) {
       vy = -vy;
 
-      // && is AND
-    } else if (x - size/2 < 0 || x + size/2 > width && y - size/2 < 0 || y + size/2 > height)
-
-    red = random(50, 100); // CHANGED MADE THE COLOR OF THE BALL TO RANDOM WHEN IT HIT THE WALL 
-    green = random(25, 200);
-    blue = random(300, 100);
-    fillColor = color(red, green, blue);
+  
+    }  
 
     x = constrain(x, size/2, width-size/2);
     y = constrain(y, size/2, height-size/2);
@@ -65,6 +66,15 @@ class Bouncer {
       fillColor = hoverColor;
     } else {
       fillColor = defaultColor;
+    }
+  }
+
+ //CHANGED / ADDED THIS 
+  void mouseClicked() {
+    if (dist(mouseX, mouseY, x, y) < size) {
+      println("Click!");
+      vx = vx * 5; //MADE THE SPEED 5 TIME FAST EACH TIME YOU CLICK THE BALL. THE SPEED WILL GO UP BY 5 EACH TIME  
+      vy = vy * 5;
     }
   }
 

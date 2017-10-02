@@ -24,3 +24,9 @@ void draw() {
   bouncer.draw();
   bouncer2.draw();
 }
+
+//ADDED THIS: TELL THE BOUNCER THAT THE BALL HAS BEEN CLICKED  
+void mouseClicked() {
+ bouncer.mouseClicked();
+ bouncer2.mouseClicked();
+}
