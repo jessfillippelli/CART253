@@ -5,6 +5,7 @@ color backgroundColor = color(200,150,150);
 Bouncer bouncer;
 Bouncer bouncer2;
 
+//info about the screen 
 void setup() {
   size(640,480);
   background(backgroundColor);

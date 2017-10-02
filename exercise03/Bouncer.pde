@@ -1,4 +1,5 @@
 //this is everything about the Bouncer.
+
 class Bouncer {
   
  int x;
@@ -30,7 +31,7 @@ class Bouncer {
    handleMouse();
  }
  
- //i think this is when the balls hot the size of the screen 
+ //i think this is where the balls bounces of the sides of the screen 
  void handleBounce() {
    if (x - size/2 < 0 || x + size/2 > width) {
     vx = -vx; 
@@ -53,6 +54,7 @@ class Bouncer {
    }
  }
  
+ //the shape and the color of the balls
  void draw() {
    noStroke();
    fill(fillColor);
