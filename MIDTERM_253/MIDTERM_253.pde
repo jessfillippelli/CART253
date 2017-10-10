@@ -31,13 +31,13 @@ Ball ball2; //ADDED THIS
 int PADDLE_INSET = 8;
 int numCircle = 35;
 
-int Ballballwins // RED BALL AND RIGHT PADDLE 
-int Ballball2wins // BLUE BALL AND LEFT PADDLE 
+//int Ballballwins // RED BALL AND RIGHT PADDLE 
+//int Ballball2wins // BLUE BALL AND LEFT PADDLE 
 
 
 // The background colour during play (black)
-color backgroundColor = color(0,255,0); //CHANGED THE BACKGROUND COLOR
-color circleColor = color(0,0,255,127); //ADDED THIS FOR THE BACK GROUND BALLS
+color backgroundColor = color(0, 255, 0); //CHANGED THE BACKGROUND COLOR
+color circleColor = color(0, 0, 255, 127); //ADDED THIS FOR THE BACK GROUND BALLS
 int circleSize = 30; //ADDED THIS //THE BLUE BACKGROUND CIRCLES
 
 // setup()
@@ -45,7 +45,7 @@ int circleSize = 30; //ADDED THIS //THE BLUE BACKGROUND CIRCLES
 // Sets the size and creates the paddles and ball
 
 //ADDED INFO ABOUT THE SCORE 
-int numberOfPointsToWin =10; //NEED 10 POINTS TO WIN
+int numberOfPointsToWin = 1; //NEED 10 POINTS TO WIN
 boolean playGame = true;
 
 void setup() {
@@ -57,14 +57,13 @@ void setup() {
   // Also pass through the two keys used to control 'up' and 'down' respectively
   // NOTE: On a mac you can run into trouble if you use keys that create that popup of
   // different accented characters in text editors (so avoid those if you're changing this)
-  
-  leftPaddle = new Paddle(PADDLE_INSET, height/2, 'z', 'x',2);
-  rightPaddle = new Paddle(width - PADDLE_INSET, height/2, 'n', 'm',1);
-  
+
+  leftPaddle = new Paddle(PADDLE_INSET, height/2, 'z', 'x', 2);
+  rightPaddle = new Paddle(width - PADDLE_INSET, height/2, 'n', 'm', 1);
+
   // Create the ball at the centre of the screen
-  ball = new Ball(width/2, height/3,1 ,color(255,0,0)); // ADDED THE COLOR OF THE BALL
-  ball2 = new Ball(width/2, 2*height/3,2,color(0,0,255)); //ADDED THIS 
- 
+  ball = new Ball(width/2, height/3, 1, color(255, 0, 0)); // ADDED THE COLOR OF THE BALL
+  ball2 = new Ball(width/2, 2*height/3, 2, color(0, 0, 255)); //ADDED THIS
 }
 
 
@@ -73,20 +72,19 @@ void setup() {
 // ADDED THIS TO TEH BACKGROUND TO MAKE THE BALL HARDER TO SEE
 void drawCircle() {
   for (int i = 0; i < numCircle; i++) {
-   float x = random(0,width);
-   float y = random(0,height);
-   fill(circleColor);
-   ellipse(x,y,circleSize,circleSize);
+    float x = random(0, width);
+    float y = random(0, height);
+    fill(circleColor);
+    ellipse(x, y, circleSize, circleSize);
   }
 
   // THE TEXT FOR THE SCORE
   textSize(32);
-  fill(0,0,255); //COLOR OF THE SCORE FOR LEFT PADDLE PLAYER 
+  fill(0, 0, 255); //COLOR OF THE SCORE FOR LEFT PADDLE PLAYER 
   text(leftPaddle.score, width/2 -50, height-10);
-  
-  fill(255,0,0); //COLOR FOR THE SCORE FOR THE RIGHT PLAYER  
-  text(rightPaddle.score, width/2+50, height-10);
 
+  fill(255, 0, 0); //COLOR FOR THE SCORE FOR THE RIGHT PLAYER  
+  text(rightPaddle.score, width/2+50, height-10);
 }
 
 
@@ -98,75 +96,86 @@ void drawCircle() {
 void draw() {
   // Fill the background each frame so we have animation
   background(backgroundColor);
-  if(playGame ==true)
+  if (playGame ==true)
   {
-  drawCircle();
+    drawCircle();
 
-  // Update the paddles and ball by calling their update methods
-  leftPaddle.update();
-  rightPaddle.update();
-  ball.update();
-  ball2.update();
+    // Update the paddles and ball by calling their update methods
+    leftPaddle.update();
+    rightPaddle.update();
+    ball.update();
+    ball2.update();
 
-  // Check if the ball has collided with either paddle
-  ball.collide(leftPaddle);
-  ball.collide(rightPaddle);
+    // Check if the ball has collided with either paddle
+    ball.collide(leftPaddle);
+    ball.collide(rightPaddle);
 
-  ball2.collide(leftPaddle);
-  ball2.collide(rightPaddle);
+    ball2.collide(leftPaddle);
+    ball2.collide(rightPaddle);
 
 
-  // Check if the ball has gone off the screen
-  if (ball.isOffScreen()) {
-    // If it has, reset the ball
-    ball.reset();
+    // Check if the ball has gone off the screen
+    if (ball.isOffScreen()) {
+      // If it has, reset the ball
+      ball.reset();
+    }
+
+    if (ball2.isOffScreen()) {
+      // If it has, reset the ball
+      ball2.reset();
+    }
+
+    // Display the paddles and the ball
+    leftPaddle.display();
+    rightPaddle.display();
+    ball.display();
+    ball2.display();
+
+    //function to check score
+    checkScore();
   }
-  
-  if (ball2.isOffScreen()) {
-    // If it has, reset the ball
-    ball2.reset();
-  }
 
-  // Display the paddles and the ball
-  leftPaddle.display();
-  rightPaddle.display();
-  ball.display();
-  ball2.display();
-
-//function to check score
-  checkScore();
-}
-
- // playGame is true
+  // playGame is true
   // if game is won means playGame ==false
   //ALL THE ELEMENTS WHEN THE GAME IS OVER 
   else
   {
-    text("GAME OVER", width/6, height/2);
+    background(0);
+    text("GAME OVER", width/4, height/2);
     textSize(32);
-    //background(0);
-    fill(0);
+    fill(255);
+
+    if (leftPaddle.score == numberOfPointsToWin) {
+      textSize(32);
+      fill(0, 0, 255);
+      text("BLUE BALL PLAYER WINS", width/2, height/2);
+    }
+
+    if (rightPaddle.score == numberOfPointsToWin) {
+      textSize(32);
+      fill(255, 0, 0);
+      text("RED BALL PLAYER WINS", width/6, height/4);
+    }
+
+
     //if (redballwins 
-   
+
     // WRITE IN RED THAT "RED PLAYER BALL WINS"
-    if (Ballballwins) {
-    text("RED BALL PLAYER WINS SUCKER", width/6, height/2);
-    textSize(32);  
-    fill(255,0,0,);
-  }
-    
-    // WRITE IN BLUE THAT "BLUE PLAYER BALL WINS"
-    if (Ballball2wins) {
-    text("BLUE BALL PLAYER WINS SUCKER", width/6, height/2);
-    textSize(32);
-    fill(0,0,255);
-  }
+    //if (Ballballwins = playerId = id) {
+    //  text("RED BALL PLAYER WINS SUCKER", width/6, height/2);
+    //  textSize(32);  
+    //  fill(255, 0, 0);
+    //}
 
-//playerId = id
-  
+    //// WRITE IN BLUE THAT "BLUE PLAYER BALL WINS"
+    //if (Ballball2wins = playerId = id) {
+    //  text("BLUE BALL PLAYER WINS SUCKER", width/6, height/2);
+    //  textSize(32);
+    //  fill(0, 0, 255);
+    //}
 
-}
-   
+    //playerId = id
+  }
 }
 
 // keyPressed()
@@ -176,9 +185,8 @@ void draw() {
 // tell the paddles
 
 void keyPressed() {
-   rightPaddle.keyPressed();
-   leftPaddle.keyPressed();
-  
+  rightPaddle.keyPressed();
+  leftPaddle.keyPressed();
 }
 
 // keyReleased()
@@ -193,7 +201,7 @@ void keyReleased() {
 
 void checkScore()
 {
-  if((leftPaddle.score ==numberOfPointsToWin)||(rightPaddle.score ==numberOfPointsToWin))
+  if ((leftPaddle.score ==numberOfPointsToWin)||(rightPaddle.score ==numberOfPointsToWin))
   {
     playGame =false;
   }

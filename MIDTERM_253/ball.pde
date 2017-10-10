@@ -9,8 +9,8 @@ class Ball {
   /////////////// Properties ///////////////
 
   // Default values for speed and size
-  int SPEED = 10; //CHANGED TEH SPPED OF THE BALLS
-  int SIZE = 16;
+  int SPEED = 10; //CHANGED THE SPPED OF THE BALLS
+  int SIZE = 167;
 
   // The starting location of the ball
   int startLocationX;
@@ -121,6 +121,7 @@ class Ball {
       }
       // And make it bounce
       vx = -vx;
+      paddleScore(paddle);
     }
   }
 
@@ -142,7 +143,7 @@ class Ball {
 //ADDED THIS FUNCTION FOR THE SCORE
   void paddleScore(Paddle p)
   {
-    if(ballId == p. playerId)
+    if(ballId == p.playerId)
       {
         p.score = p.score+1;
       }
