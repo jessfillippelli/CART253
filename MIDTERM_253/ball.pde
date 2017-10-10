@@ -1,5 +1,6 @@
 // Ball
-//
+////RED BALL IS PLAYER ONE
+//BLUE BALL IS PLAYER TWO
 // A class that defines a ball that can move around in the window, bouncing
 // of the top and bottom, and can detect collision with a paddle and bounce off that.
 
@@ -8,7 +9,7 @@ class Ball {
   /////////////// Properties ///////////////
 
   // Default values for speed and size
-  int SPEED = 5;
+  int SPEED = 10; //CHANGED TEH SPPED OF THE BALLS
   int SIZE = 16;
 
   // The starting location of the ball
@@ -22,15 +23,12 @@ class Ball {
   // The velocity of the ball
   int vx; 
   int vy;  
-  //int tempX; //ADDED THE INT TEMPS
-  //int tempY;
-  //int tempVX;
-  //int tempVY;
+
 
   // The colour of the ball
-  color ballColor = color(0, 0, 0);
-  color ballcolor2 = color(255,0,0);
-
+  color ballColor = color(255,0,0); //RED
+  //color ballcolor2 = color(0,0,255); //BLUE
+  int ballId; //ADDED THE ID TO LINK BALL TO PADDLE
 
   /////////////// Constructor ///////////////
 
@@ -43,13 +41,15 @@ class Ball {
   // NOTE that I'm using an underscore in front of the arguments to distinguish
   // them from the class's properties
 
-  Ball(int _x, int _y) {
+ Ball(int _x, int _y, int id, color ballC) {
     startLocationX = _x;
     startLocationY = _y;
     x = startLocationX;
     y = startLocationY;
     vx = SPEED;
     vy = SPEED;
+    ballColor = ballC; //ADDED
+    ballId = id; //ADDED
   }
 
 
@@ -68,7 +68,7 @@ class Ball {
     y += vy;
 
     // Check if the ball is going off the top of bottom
-    if (y - SIZE/2 < 0 || y + SIZE/2 > height) {
+    if (y - SIZE*3 < 0 || y + SIZE*3 > height) {           //CHANGED /2 T *3
       // If it is, then make it "bounce" by reversing its velocity
       vy = -vy;
     }
@@ -138,4 +138,21 @@ class Ball {
     ellipse(x, y, 35, 35);
     ellipse(x, y, 35, 35); //BALL 2
   }
+
+//ADDED THIS FUNCTION FOR THE SCORE
+  void paddleScore(Paddle p)
+  {
+    if(ballId == p. playerId)
+      {
+        p.score = p.score+1;
+      }
+      else
+      {
+         p.score = p.score-1;
+      }
+      println(p.playerId+"  score:: "+p.score);
+  }
+
 }
+
+ 

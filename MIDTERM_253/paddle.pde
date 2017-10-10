@@ -12,9 +12,6 @@ class Paddle {
   int HEIGHT = 70;
   int WIDTH = 16;
   
-  
-  
-  
   // The position and velocity of the paddle (note that vx isn't really used right now)
   int x;
   int y;
@@ -22,11 +19,13 @@ class Paddle {
   int vy;
   
   // The fill color of the paddle
-  color paddleColor = color(105,105,105);
+  color paddleColor = color(105, 105, 105); // CHNAGED THE COLOR OF THE PADDLES 
 
   // The characters used to make the paddle move up and down, defined in constructor
   char upKey;
   char downKey;
+  int playerId;
+  int score;
 
 
   /////////////// Constructor ///////////////
@@ -36,14 +35,16 @@ class Paddle {
   // Sets the position and controls based on arguments,
   // starts the velocity at 0
 
-  Paddle(int _x, int _y, char _upKey, char _downKey) {
+  Paddle(int _x, int _y, char _upKey, char _downKey, int id) { //ADDED THE ID 
     x = _x;
     y = _y;
     vx = 0;
     vy = 0;
-
     upKey = _upKey;
     downKey = _downKey;
+    playerId = id; //ADDED THE ID
+    score=0; //ADDED THE SCORE
+    
   }
 
 

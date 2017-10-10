@@ -9,6 +9,18 @@
 // Pretty ugly. (Now!)
 // Only two paddles. (So far!)
 
+//NEW KEYS
+//PLAYER ONE HAS ---> Z AND X <---
+//PLAYER TWO HAS ---> N AMD M <---
+
+
+//INFO ABOUT THE SCORE 
+//PLAYER ONE -> RIGHT PADDLE -> RED BALL
+//PLAYER TWO -> LEFT PADDLE -> BLUE BALL 
+//IF PLAYER HITS ITS OWN BALL = +1
+//IF PLAYER HITS HIS OPINOTE BALL - 1
+// FIRST TO 10 WINS 
+
 // Global variables for the paddles and the ball
 Paddle leftPaddle;
 Paddle rightPaddle;
@@ -18,19 +30,19 @@ Ball ball2; //ADDED THIS
 // The distance from the edge of the window a paddle should be
 int PADDLE_INSET = 8;
 int numCircle = 20;
-//int i = 0;
+
 // The background colour during play (black)
 color backgroundColor = color(0,255,0); //CHANGED THE BACKGROUND COLOR
-color circleColor = color(0,0,255,127); //ADDED THIS 
-color ballcolor2 = color(255,0,0); //ADDED THIS
+color circleColor = color(0,0,255,127); //ADDED THIS FOR THE BACK GROUND BALLS
 int circleSize = 30; //ADDED THIS //THE BLUE BACKGROUND CIRCLES
-//int Counter =0;
-int score =0;
-
 
 // setup()
 //
 // Sets the size and creates the paddles and ball
+
+//ADDED INFO ABOUT THE SCORE 
+int numberOfPointsToWin =10; //NEED 10 POINTS TO WIN
+boolean playGame = true;
 
 void setup() {
   // the size o
@@ -42,21 +54,19 @@ void setup() {
   // NOTE: On a mac you can run into trouble if you use keys that create that popup of
   // different accented characters in text editors (so avoid those if you're changing this)
   
-  leftPaddle = new Paddle(PADDLE_INSET, height/2, '1', 'q');
-  rightPaddle = new Paddle(width - PADDLE_INSET, height/2, '0', 'p');
+  leftPaddle = new Paddle(PADDLE_INSET, height/2, 'z', 'x',2);
+  rightPaddle = new Paddle(width - PADDLE_INSET, height/2, 'n', 'm',1);
   
   // Create the ball at the centre of the screen
-  ball = new Ball(width/2, height/3);
-  ball2 = new Ball(width/2, 2*height/3); //ADDED THIS 
+  ball = new Ball(width/2, height/3,1 ,color(255,0,0)); // ADDED THE COLOR OF THE BALL
+  ball2 = new Ball(width/2, 2*height/3,2,color(0,0,255)); //ADDED THIS 
+ 
 }
 
-//not sure about this MAYBE FOR THE SCORE
-//for (int i = 0; i < 10; i ++) {
-  //println( "The Value of i is" +i);
-//}
 
 
-// ADDED THIS 
+//THE BACKGROUND
+// ADDED THIS TO TEH BACKGROUND TO MAKE THE BALL HARDER TO SEE
 void drawCircle() {
   for (int i = 0; i < numCircle; i++) {
    float x = random(0,width);
@@ -65,11 +75,13 @@ void drawCircle() {
    ellipse(x,y,circleSize,circleSize);
   }
 
+  // THE TEXT FOR THE SCORE
   textSize(32);
-  fill(255,0,0);
-  text("score: " + score, 10, 30);
-
-
+  fill(0,0,255); //COLOR OF THE SCORE FOR LEFT PADDLE PLAYER 
+  text(leftPaddle.score, width/2 -50, height-10);
+  
+  fill(255,0,0); //COLOR FOR THE SCORE FOR THE RIGHT PLAYER  
+  text(rightPaddle.score, width/2+50, height-10);
 
 }
 
@@ -82,6 +94,8 @@ void drawCircle() {
 void draw() {
   // Fill the background each frame so we have animation
   background(backgroundColor);
+  if(playGame ==true)
+  {
   drawCircle();
 
   // Update the paddles and ball by calling their update methods
@@ -115,12 +129,26 @@ void draw() {
   ball.display();
   ball2.display();
 
-    
-    //text(counter, width/2, height/2);
-    //counter++;
-    //textsize(100);
-    //textalign(CENTER, CENTER);
+//function to check score
+  checkScore();
+}
 
+ // playGame is true
+  // if game is won means playGame ==false
+  //ALL THE ELEMENTS WHEN THE GAME IS OVER 
+  else
+  {
+    text("GAME OVER", width/6, height/2);
+    textSize(32);
+    //background(0);
+    fill(0);
+    //if (redballwins 
+   
+    //if (Ball ball.wins) {
+    // WRITE IN RED THAT "RED BALL WINS"
+    //text("RED BALL WINS", 
+  }
+   
 }
 
 // keyPressed()
@@ -130,18 +158,8 @@ void draw() {
 // tell the paddles
 
 void keyPressed() {
-  // Just call both paddles' own keyPressed methods
-  //ADDED THIS NOT SURE ABOUT IT THO 
-  //if (key == "0" && "p") {
-  //  rightPaddle.keyPressed(-10);
-  //} else if (key == "1" && "q") {
-  // leftPaddle.keyPressed(10);
-  //}
-  
    rightPaddle.keyPressed();
    leftPaddle.keyPressed();
-
-    
   
 }
 
@@ -153,4 +171,12 @@ void keyReleased() {
   // Call both paddles' keyReleased methods
   leftPaddle.keyReleased();
   rightPaddle.keyReleased();
+}
+
+void checkScore()
+{
+  if((leftPaddle.score ==numberOfPointsToWin)||(rightPaddle.score ==numberOfPointsToWin))
+  {
+    playGame =false;
+  }
 }
