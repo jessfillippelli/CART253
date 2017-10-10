@@ -29,7 +29,7 @@ Ball ball2; //ADDED THIS
 
 // The distance from the edge of the window a paddle should be
 int PADDLE_INSET = 8;
-int numCircle = 20;
+int numCircle = 35;
 
 // The background colour during play (black)
 color backgroundColor = color(0,255,0); //CHANGED THE BACKGROUND COLOR
@@ -45,7 +45,7 @@ int numberOfPointsToWin =10; //NEED 10 POINTS TO WIN
 boolean playGame = true;
 
 void setup() {
-  // the size o
+  // the size 
   size(550, 500);
 
   // Create the paddles on either side of the screen. 
