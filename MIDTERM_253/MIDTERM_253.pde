@@ -31,6 +31,10 @@ Ball ball2; //ADDED THIS
 int PADDLE_INSET = 8;
 int numCircle = 35;
 
+int Ballballwins // RED BALL AND RIGHT PADDLE 
+int Ballball2wins // BLUE BALL AND LEFT PADDLE 
+
+
 // The background colour during play (black)
 color backgroundColor = color(0,255,0); //CHANGED THE BACKGROUND COLOR
 color circleColor = color(0,0,255,127); //ADDED THIS FOR THE BACK GROUND BALLS
@@ -144,10 +148,24 @@ void draw() {
     fill(0);
     //if (redballwins 
    
-    //if (Ball ball.wins) {
-    // WRITE IN RED THAT "RED BALL WINS"
-    //text("RED BALL WINS", 
+    // WRITE IN RED THAT "RED PLAYER BALL WINS"
+    if (Ballballwins) {
+    text("RED BALL PLAYER WINS SUCKER", width/6, height/2);
+    textSize(32);  
+    fill(255,0,0,);
   }
+    
+    // WRITE IN BLUE THAT "BLUE PLAYER BALL WINS"
+    if (Ballball2wins) {
+    text("BLUE BALL PLAYER WINS SUCKER", width/6, height/2);
+    textSize(32);
+    fill(0,0,255);
+  }
+
+//playerId = id
+  
+
+}
    
 }
 
