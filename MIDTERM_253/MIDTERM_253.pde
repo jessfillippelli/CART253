@@ -28,16 +28,12 @@ Ball ball;
 Ball ball2; //ADDED THIS 
 
 // The distance from the edge of the window a paddle should be
-int PADDLE_INSET = 8;
-int numCircle = 35;
-
-//int Ballballwins // RED BALL AND RIGHT PADDLE 
-//int Ballball2wins // BLUE BALL AND LEFT PADDLE 
-
+int PADDLE_INSET = 20; // ADDED SOMESAPCE BETWEEN THE PADDLE AND THE WALL
+int numCircle = 40;
 
 // The background colour during play (black)
-color backgroundColor = color(0, 255, 0); //CHANGED THE BACKGROUND COLOR
-color circleColor = color(0, 0, 255, 127); //ADDED THIS FOR THE BACK GROUND BALLS
+color backgroundColor = color(50,205,50); //CHANGED THE BACKGROUND COLOR
+color circleColor = color(0,127); //ADDED THIS FOR THE BACK GROUND BALLS
 int circleSize = 30; //ADDED THIS //THE BLUE BACKGROUND CIRCLES
 
 // setup()
@@ -69,7 +65,7 @@ void setup() {
 
 
 //THE BACKGROUND
-// ADDED THIS TO TEH BACKGROUND TO MAKE THE BALL HARDER TO SEE
+// ADDED THIS TO THE BACKGROUND TO MAKE THE BALL HARDER TO SEE
 void drawCircle() {
   for (int i = 0; i < numCircle; i++) {
     float x = random(0, width);
@@ -141,40 +137,22 @@ void draw() {
   else
   {
     background(0);
-    text("GAME OVER", width/4, height/2);
+    text("GAME OVER", width/4.5, height/4);
     textSize(32);
     fill(255);
 
     if (leftPaddle.score == numberOfPointsToWin) {
       textSize(32);
       fill(0, 0, 255);
-      text("BLUE BALL PLAYER WINS", width/2, height/2);
+      text("BLUE BALL PLAYER WINS", width/3.5, height/2);
     }
 
     if (rightPaddle.score == numberOfPointsToWin) {
       textSize(32);
       fill(255, 0, 0);
-      text("RED BALL PLAYER WINS", width/6, height/4);
+      text("RED BALL PLAYER WINS", width/3.5, height/2);
     }
 
-
-    //if (redballwins 
-
-    // WRITE IN RED THAT "RED PLAYER BALL WINS"
-    //if (Ballballwins = playerId = id) {
-    //  text("RED BALL PLAYER WINS SUCKER", width/6, height/2);
-    //  textSize(32);  
-    //  fill(255, 0, 0);
-    //}
-
-    //// WRITE IN BLUE THAT "BLUE PLAYER BALL WINS"
-    //if (Ballball2wins = playerId = id) {
-    //  text("BLUE BALL PLAYER WINS SUCKER", width/6, height/2);
-    //  textSize(32);
-    //  fill(0, 0, 255);
-    //}
-
-    //playerId = id
   }
 }
 

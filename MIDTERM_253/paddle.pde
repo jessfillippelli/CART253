@@ -74,7 +74,7 @@ class Paddle {
     rectMode(CENTER);
     
     // Draw the paddle as a rectangle
-    rect(x, y, 50, 50);
+    rect(x, y, 30, 30); //CHANGED THE SIZE OF THE PADDLES
   }
 
   // keyPressed()
