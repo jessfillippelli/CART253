@@ -42,7 +42,7 @@ int circleSize = 30; //ADDED THIS //THE BLUE BACKGROUND CIRCLES
 // Sets the size and creates the paddles and ball
 
 //ADDED INFO ABOUT THE SCORE 
-int numberOfPointsToWin = 1; //NEED 10 POINTS TO WIN
+int numberOfPointsToWin = 10; //NEED 10 POINTS TO WIN
 boolean playGame = true;
 
 void setup() {
