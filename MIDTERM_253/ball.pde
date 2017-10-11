@@ -10,7 +10,7 @@ class Ball {
 
   // Default values for speed and size
   int SPEED = 10; //CHANGED THE SPPED OF THE BALLS
-  int SIZE = 167;
+  int SIZE = 35;
 
   // The starting location of the ball
   int startLocationX;
@@ -80,8 +80,12 @@ class Ball {
   // Note that it KEEPS its velocity
 
   void reset() {
-    x = startLocationX;
-    y = startLocationY;
+    //x = startLocationX;
+     x = (int)random(width);
+    println(x);
+    //y = startLocationY;
+     y = (int)random(width);
+     //println(y);
   }
 
   // isOffScreen()
@@ -136,8 +140,8 @@ class Ball {
     ellipseMode(CENTER);
 
     // Draw the ball
-    ellipse(x, y, 35, 35);
-    ellipse(x, y, 35, 35); //BALL 2
+    ellipse(x, y, SIZE, SIZE);
+    ellipse(x, y, SIZE, SIZE); //BALL 2
   }
 
 //ADDED THIS FUNCTION FOR THE SCORE
