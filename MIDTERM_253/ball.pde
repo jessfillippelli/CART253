@@ -151,7 +151,7 @@ class Ball {
       {
          p.score = p.score-1;
       }
-      println(p.playerId+"  score:: "+p.score);
+      //println(p.playerId+"  score:: "+p.score);
   }
 
 }
