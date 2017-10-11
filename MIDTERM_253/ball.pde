@@ -82,7 +82,7 @@ class Ball {
   void reset() {
     //x = startLocationX;
      x = (int)random(width);
-    println(x);
+    //println(x);
     //y = startLocationY;
      y = (int)random(width);
      //println(y);
