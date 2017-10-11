@@ -9,8 +9,8 @@ class Paddle {
 
   // Default values for speed and size
   int SPEED = 5;
-  int HEIGHT = 70;
-  int WIDTH = 16;
+  int HEIGHT = 30; //added the 30 to H and W
+  int WIDTH = 30; 
   
   // The position and velocity of the paddle (note that vx isn't really used right now)
   int x;
@@ -60,7 +60,7 @@ class Paddle {
     y += vy;
 
     // Constrain the paddle's y position to be in the window
-    y = constrain(y,0 + HEIGHT/2,height - HEIGHT/2);
+    y = constrain(y,0 + HEIGHT,height - HEIGHT); //TOOK OUT THE /2
   }
 
   // display()
@@ -74,7 +74,7 @@ class Paddle {
     rectMode(CENTER);
     
     // Draw the paddle as a rectangle
-    rect(x, y, 30, 30); //CHANGED THE SIZE OF THE PADDLES
+    rect(x, y, HEIGHT, WIDTH); //CHANGED THE SIZE OF THE PADDLES
   }
 
   // keyPressed()
