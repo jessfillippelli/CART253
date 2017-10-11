@@ -30,7 +30,7 @@ Ball ball2; //ADDED THIS
 // The distance from the edge of the window a paddle should be
 int PADDLE_INSET = 20; // ADDED SOMESAPCE BETWEEN THE PADDLE AND THE WALL
 int numCircle = 40;
-PImage img;  //FOR THE OVEROVER PIC 
+//PImage img;  //FOR THE OVEROVER PIC 
 
 // The background colour during play (black)
 color backgroundColor = color(50, 205, 50); //CHANGED THE BACKGROUND COLOR
@@ -140,11 +140,11 @@ void draw() {
   {
     background(0);
     //img = loadImage("gameover.png");
-    image(img, 0, 0);
-    image(img, 0, 0, width/3, height/3);
-    //text("GAME OVER", width/4.5, height/4);
-    //textSize(32);
-    //fill(255);
+    //image(img, 0, 0);
+    //image(img, 0, 0, width/2, height/2);
+    text("GAME OVER", width/4.5, height/4);
+    textSize(32);
+    fill(255);
 
     if (leftPaddle.score == numberOfPointsToWin) {
       textSize(32);
