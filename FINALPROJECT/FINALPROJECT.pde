@@ -12,7 +12,8 @@ enum State {
     TITLE, 
     MENU, 
     BASIC_PONG, 
-    BLUE_PONG
+    BLUE_PONG, 
+    TEN_PONG //ADDED THIS FOR THE 10 BALL PONG
 }
 // This is the variable that actually tracks the state in the game
 State state;
@@ -23,7 +24,7 @@ Title title;
 Menu menu;
 BasicPong basicPong;
 BluePong bluePong;
-
+TenPong tenPong; //ADDED THIS FOR THE 10 BALL PONG 
 
 // setup()
 //
@@ -38,6 +39,9 @@ void setup() {
   menu = new Menu();
   basicPong = new BasicPong();
   bluePong = new BluePong();
+  tenPong = new TenPong(); //ADDED THIS FOR THE 10 BALL PONG
+
+
 
   // We start our state in the title screen
   state = State.TITLE;
@@ -58,9 +62,9 @@ void draw() {
   case NONE:
     break;
 
-  // If our state is TITLE we update the title object
-  // which displays it, and then we check whether the title
-  // screen is finished and if so we go to the menu state
+    // If our state is TITLE we update the title object
+    // which displays it, and then we check whether the title
+    // screen is finished and if so we go to the menu state
   case TITLE:
     title.update();
     if (title.finished) {
@@ -68,10 +72,10 @@ void draw() {
     }
     break;
 
-  // If our state is MENU we update the menu
-  // We then check whether anything has been selected
-  // in the menu and if so we switch to that state
-  // (And reset the menu selection for next time.)
+    // If our state is MENU we update the menu
+    // We then check whether anything has been selected
+    // in the menu and if so we switch to that state
+    // (And reset the menu selection for next time.)
   case MENU:
     menu.update();
     if (menu.selection != State.NONE) {
@@ -80,10 +84,10 @@ void draw() {
     }
     break;
 
-  // If our state is BASIC_PONG we update the
-  // basicPong object which runs the game and then check whether 
-  // the player has chosen to return to the menu. If so we set
-  // the state appropriate, and reset the game.
+    // If our state is BASIC_PONG we update the
+    // basicPong object which runs the game and then check whether 
+    // the player has chosen to return to the menu. If so we set
+    // the state appropriate, and reset the game.
   case BASIC_PONG:
     basicPong.update();
     if (basicPong.returnToMenu) {
@@ -92,14 +96,24 @@ void draw() {
     }
     break;
 
-  // If our state is BLUE_PONG we do all the same things,
-  // but for the bluePong object instead
+    // If our state is BLUE_PONG we do all the same things,
+    // but for the bluePong object instead
   case BLUE_PONG:
     bluePong.update();
     if (bluePong.returnToMenu) {
       state = State.MENU;
       bluePong.returnToMenu = false;
       bluePong.reset();
+    }
+    break;
+
+    //CASE FOR THE 10 BALL PONG
+  case TEN_PONG:
+    tenPong.update();
+    if (tenPong.returnToMenu) {
+      state = State.MENU;
+      tenPong.returnToMenu = false;
+      tenPong.reset();
     }
     break;
   }
@@ -130,6 +144,10 @@ void keyPressed() {
   case BLUE_PONG:
     bluePong.keyPressed();
     break;
+
+  case TEN_PONG:
+    tenPong.keyPressed();
+    break;
   }
 }
 
@@ -158,6 +176,10 @@ void keyReleased() {
 
   case BLUE_PONG:
     bluePong.keyReleased();
+    break;
+
+  case TEN_PONG:
+    tenPong.keyReleased();
     break;
   }
 }

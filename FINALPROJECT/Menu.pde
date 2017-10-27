@@ -32,6 +32,7 @@ class Menu {
     textSize(32);
     text("(P)ONG", width/2, 50);
     text("(B)LUE PONG", width/2, 100);
+    text("(T)EN PONG", width/2, 150);
   }
 
   // keyPressed()
@@ -45,6 +46,9 @@ class Menu {
       selection = State.BASIC_PONG;
     } else if (key == 'b' || key == 'B') {
       selection = State.BLUE_PONG;
+    }
+    else if (key == 't' || key == 'T') {
+      selection = State.TEN_PONG;
     }
   }
 

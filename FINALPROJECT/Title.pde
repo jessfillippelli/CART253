@@ -52,4 +52,3 @@ class Title {
   
   void keyReleased() {
   }
-}
