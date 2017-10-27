@@ -1,19 +1,18 @@
 class TenPong {
 
-  Paddle leftPaddle;
-  Paddle rightPaddle;
-  Ball ball;
-  
-  color backgroundColor = color(255,182,193);
+  Paddle MiddlePaddle;
+  TenBall ball;
+
+  color backgroundColor = color(255, 182, 193);
 
   void update() {
     // Fill the background each frame so we have animation
     background(backgroundColor);
 
     // Update the paddles and ball by calling their update methods
-    leftPaddle.update();
-    rightPaddle.update();
-    ball.update();
+    //leftPaddle.update();
+    middlePaddle.update();
+    Tenball.update();
 
     // Check if the ball has collided with either paddle
     ball.collide(leftPaddle);
@@ -22,23 +21,25 @@ class TenPong {
     // Check if the ball has gone off the screen
     if (ball.isOffScreen()) {
       // If it has, reset the ball
-      ball.reset();
+      Tenball.reset();
     }
     // Display the paddles and the ball
-    leftPaddle.display();
-    rightPaddle.display();
-    ball.display();
+    //leftPaddle.display();
+    middlePaddle.display();
+    Tenball.display();
   }
 
 
-void keyPressed() {
+
+  void keyPressed() {
     // Just call both paddles' own keyPressed methods
-    leftPaddle.keyPressed();
-    rightPaddle.keyPressed();
-    
+    //leftPaddle.keyPressed();
+    //rightPaddle.keyPressed();
+    middlePaddle.keypressed();
+
     // Check if we should return to the menu
     if (key == 'm' || key == 'M') {
-     returnToMenu = true; 
+      returnToMenu = true;
     }
   }
 
@@ -48,7 +49,7 @@ void keyPressed() {
 
   void keyReleased() {
     // Call both paddles' keyReleased methods
-    leftPaddle.keyReleased();
-    rightPaddle.keyReleased();
+    //leftPaddle.keyReleased();
+    middlePaddle.keyReleased();
   }
 }
