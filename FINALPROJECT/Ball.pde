@@ -10,7 +10,8 @@ class Ball {
   // Default values for speed and size
   int SPEED = 5;
   int SIZE = 16;
- 
+  Ball ball;
+  Ball[] Balls= new Ball[9]; // added this for the array
   
 
   // The location of the ball

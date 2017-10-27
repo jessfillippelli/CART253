@@ -108,14 +108,14 @@ void draw() {
     break;
 
     //CASE FOR THE 10 BALL PONG
-  //case TEN_PONG:
-  //  tenPong.update();
-  //  if (tenPong.returnToMenu) {
-  //    state = State.MENU;
-  //    tenPong.returnToMenu = false;
-  //    tenPong.reset();
-  //  }
-  //  break;
+  case TEN_PONG:
+    tenPong.update();
+    if (tenPong.returnToMenu) {
+      state = State.MENU;
+      tenPong.returnToMenu = false;
+      tenPong.reset();
+    }
+    break;
   }
 }
 

@@ -14,7 +14,7 @@ class Tenball {
   int vy;
 
   // The colour of the ball
-  //color = TenballColor = color(0); //9 BALLS
+  color = TenballColor = color(0); //9 BALLS
 
   Ball(int _x, int _y) {
     x = _x;
@@ -23,18 +23,18 @@ class Tenball {
     vy = SPEED;
   }
 
- //ellipse(56, 46, 55, 55);
+ ellipse((56, 46, 55, 55)
 
 
 
-  TenBall tenball;
-  TenBall[] TenBalls= new TenBall[9]; // added this for the array 
+  Ball ball;
+  Ball[] Balls= new Ball[9]; // added this for the array void update() 
 
 
 
-  //Tenball = new Tenball((int) random(width), (int) random(height), 2, -2); //the last  2 # are teh vx(speed)
+  Tenball = new Tenball((int) random(width), (int) random(height), 2, -2); //the last  2 # are teh vx(speed)
   //THE ARRAY
- // for (int i = 0; i < habs.length; i++) {
+  for (int i = 0; i < habs.length; i++) {
    // tenballs[i] = new TenBall((int) random(width), (int) random(height), 2, 2); //CHNAGED THE LOACTION TO RANDOM for array
   }
 }
