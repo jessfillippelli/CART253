@@ -24,6 +24,9 @@ class Paddle {
   // The characters used to make the paddle move up and down, defined in constructor
   char upKey;
   char downKey;
+  
+  char leftKey;
+  char rightKey;
 
 
   /////////////// Constructor ///////////////
@@ -33,7 +36,8 @@ class Paddle {
   // Sets the position and controls based on arguments,
   // starts the velocity at 0
 
-  Paddle(int _x, int _y, char _upKey, char _downKey) {
+  //BASIC AND BLUE PONG
+  Paddle(int _x, int _y, char _upKey, char _downKey) { //Constructor
     x = _x;
     y = _y;
     vx = 0;
@@ -43,6 +47,19 @@ class Paddle {
     downKey = _downKey;
   }
 
+
+//10 PONG PADDLE
+ Paddle(int _x, int _y, char _leftKey, char _rightKey , int _w, int _h) { //Constructor
+    x = _x;
+    y = _y;
+    vx = 0;
+    vy = 0;
+  HEIGHT = _h;
+  WIDTH = _w;
+
+    leftKey = _leftKey;
+    rightKey = _rightKey;
+  }
 
   /////////////// Methods ///////////////
 
@@ -93,6 +110,16 @@ class Paddle {
       // If so we want a positive y velocity
       vy = SPEED;
     }
+    
+    // Check if the key is our up key
+    if (key == leftKey) {
+      // If so we want a negative y velocity
+      vx = -SPEED;
+    } // Otherwise check if the key is our down key 
+    else if (key == rightKey) {
+      // If so we want a positive y velocity
+      vx = SPEED;
+    }
   }
 
   // keyReleased()
@@ -108,6 +135,15 @@ class Paddle {
     else if (key == downKey && vy > 0) {
       // If so it should stop
       vy = 0;
+    }
+    
+     if (key == leftKey && vx < 0) {
+      // If so it should stop
+      vx = 0;
+    } // Otherwise check if the key is our down key and paddle is moving down 
+    else if (key == rightKey && vx > 0) {
+      // If so it should stop
+      vx = 0;
     }
   }
 }

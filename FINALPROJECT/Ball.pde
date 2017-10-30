@@ -17,6 +17,7 @@ class Ball {
   // The location of the ball
   int x;
   int y;
+ 
 
   // The velocity of the ball
   int vx;
@@ -37,6 +38,7 @@ class Ball {
   // NOTE that I'm using an underscore in front of the arguments to distinguish
   // them from the class's properties
 
+ //BALL FOR BASIC AND BLUE PONG
   Ball(int _x, int _y) {
     x = _x;
     y = _y;
@@ -44,6 +46,15 @@ class Ball {
     vy = SPEED;
   }
 
+//BALL FOR 10 PONG
+Ball(int _x, int _y, int _vx, int _vy) {
+   SPEED = _vx;
+    x = _x;
+    y = _y;
+    vx = SPEED;
+    vy = SPEED;
+    //ellipse(56, 46, 55, 55);
+  }
 
   /////////////// Methods ///////////////
 
@@ -121,11 +132,24 @@ class Ball {
 
   void display() {
     // Set up the appearance of the ball (no stroke, a fill, and rectMode as CENTER)
+    //THE BASIC AND BLUE PONG 
     noStroke();
     fill(ballColor);
     rectMode(CENTER);
 
     // Draw the ball
     rect(x, y, SIZE, SIZE);
+    
+   
+   
+  }
+     //THE 10 PONG BALL 
+     void displayTenPong() {
+    // Set up the appearance of the ball (no stroke, a fill, and rectMode as CENTER)
+    noStroke();
+    fill(ballColor);
+    rectMode(CENTER);
+    ellipse(x, y, SIZE, SIZE);
+   
   }
 }
