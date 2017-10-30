@@ -11,7 +11,7 @@ Capture video;
 // A PVector allows us to store an x and y location in a single object
 // When we create it we give it the starting x and y (which I'm setting to -1, -1
 // as a default value)
-PVector brightestPixel = new PVector(-1,-1);
+PVector brightestPixel = new PVector(-1, -1);
 
 // An array of bouncers to play with
 Bouncer[] bouncers = new Bouncer[10];
@@ -22,14 +22,15 @@ Bouncer[] bouncers = new Bouncer[10];
 
 void setup() {
   size(640, 480);
+  //background(255, 0, 0);
 
   // Our old friend the for-loop used to go through the length of an
   // array adding new objects to it (Bouncers in this case)
   for (int i = 0; i < bouncers.length; i++) {
     // Each Bouncer just starts with random values 
-    bouncers[i] = new Bouncer(random(0,width),random(0,height),random(-10,10),random(-10,10),random(20,50),color(random(255)));
+    bouncers[i] = new Bouncer(random(0, width), random(0, height), random(-10, 10), random(-10, 10), random(20, 50), color(random(255)));
   }
-  
+
   // Start up the webcam
   video = new Capture(this, 640, 480, 30);
   video.start();
@@ -42,26 +43,46 @@ void setup() {
 // do something much more interesting in order to actually interact with the Bouncers.
 
 void draw() {
+  loadPixels();
+  println(hex(pixels[400]));
+  updatePixels();
+
+//THIS FIRST IF STATMENT IS WHAT HAPPENS WHEN THE SCRREN BLACK (WHEN THE WEBCAM IS LOADING) 
+// THE BALLS ARE FIRST LIGHT PINK
+  if (red(pixels[400]) == 0 && green(pixels[400])==0 && blue(pixels[400])==0) {
+    println("hello");
+    for (int i = 0; i < bouncers.length; i++) {
+      bouncers[i].fillColor = color(255,182,193);
+    }
+  } else { //THIS IF STATEMENT IS WHAT HAPPEN WHEN THE SCREEN IS NOT BLACK ==> THE BALLS CHANGE INTO RANDOM SHADES OF PINK 
+    println("bye");
+    for (int i = 0; i < bouncers.length; i++) {
+      bouncers[i].fillColor = color(255, 20, random(180));//255,105,180
+    }
+  }
+
+
+
   // A function that processes the current frame of video
   handleVideoInput();
 
   // Draw the video frame to the screen
   image(video, 0, 0);
-  
+
   // Our old friend the for-loop running through the length of an array to
   // update and display objects, in this case Bouncers.
   // If the brightness (or other video property) is going to interact with all the
   // Bouncers, it will need to happen in here.
   for (int i = 0; i < bouncers.length; i++) {
-   bouncers[i].update();
-   bouncers[i].display();
+    bouncers[i].update();
+    bouncers[i].display();
   }
-  
+
   // For now we just draw a crappy ellipse at the brightest pixel
   fill(#ff0000);
   stroke(#ffff00);
   strokeWeight(10);
-  ellipse(brightestPixel.x,brightestPixel.y,20,20);
+  ellipse(brightestPixel.x, brightestPixel.y, 20, 20);
 }
 
 // handleVideoInput
@@ -75,7 +96,12 @@ void handleVideoInput() {
     // If not, then just return, nothing to do
     return;
   }
-  
+
+
+  //if (video.available()) {
+  //        color fillColor = color(255, 182, 193);
+  //     }
+
   // If we're here, there IS a frame to look at so read it in
   video.read();
 
@@ -102,6 +128,9 @@ void handleVideoInput() {
         // brightestPixel's x and y properties.
         brightestPixel.x = x;
         brightestPixel.y = y;
+
+        //AS SOON AS WEBCAMERA TURNS ON THE BALLS CHANGE COLOUR
+        //if  (!video.available()); {
       }
     }
   }
