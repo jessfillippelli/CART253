@@ -33,6 +33,7 @@ class Menu {
     text("(P)ONG", width/2, 50);
     text("(B)LUE PONG", width/2, 100);
     text("(T)EN PONG", width/2, 150);
+    text("(R)OTATING PONG", width/2, 200);
   }
 
   // keyPressed()
@@ -49,6 +50,9 @@ class Menu {
     }
     else if (key == 't' || key == 'T') {
       selection = State.TEN_PONG;
+    }
+     else if (key == 'r'|| key == 'T') {
+      selection= State.ROTATING_PONG;
     }
   }
 

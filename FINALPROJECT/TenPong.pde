@@ -15,7 +15,7 @@ class TenPong {
 
   TenPong()
   {
-    middlePaddle = new Paddle(width/2, height/2, 'a', 'g',70,16);
+    middlePaddle = new Paddle(width/2, height/2, 'a', 'g',70,16); //70 AND 16 IS THE SIZE OF THE PADDLE
 
     tenBalls = new Ball [10];
     for (int i = 0; i < tenBalls.length; i++) {

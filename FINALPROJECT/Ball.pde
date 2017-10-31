@@ -152,4 +152,15 @@ Ball(int _x, int _y, int _vx, int _vy) {
     ellipse(x, y, SIZE, SIZE);
    
   }
+
+  //rotating ball
+     void displayRotatingPong() {
+    // Set up the appearance of the ball (no stroke, a fill, and rectMode as CENTER)
+    noStroke();
+    fill(ballColor);
+    rectMode(CENTER);
+    ellipse(x, y, SIZE, SIZE);
+   
+  }
+
 }
