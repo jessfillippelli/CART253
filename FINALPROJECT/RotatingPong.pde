@@ -2,24 +2,26 @@ class RotatingPong {
 
   //Paddle2 leftPaddle;
   //Paddle2 rightPaddle;
-  Paddle horizontaleftPaddle; 
-  Paddle horizontalrightPaddle;
+  //Paddle horizontaleftPaddle; 
+  Paddle horizontalPaddle;
   Ball ball;
 
   // The distance from the edge of the window a paddle should be
   //int PADDLE_INSET = 8;
+  //int  horizontaleftHeight = 16;
+  int  horizontalHeight = 16;
 
   // The background colour during play (black)
   color backgroundColor = color(147, 112, 219);
-  //color horizontaleftPaddle = color(255);
+  
 
   // A boolean to track whether we should return to the menu
   boolean returnToMenu = false;
 
   RotatingPong() {
-    // Create a paddle on either side of the screen
-    horizontaleftPaddle = new Paddle(width/2, height/2, '2', 'r',70,16);
-    horizontalrightPaddle = new Paddle(width/2, height/2,  '9', 'i');
+    // Create 2 PADDLES IN THE MIDDLE OF THE SCREEN
+    horizontalPaddle = new Paddle(width/2, height - horizontalHeight,'2', 'r',100,16);
+    //horizontalrightPaddle = new Paddle(width/3, height - horizontalrightHeight, '9', 'i', 70,16);
 
     // Create the ball at the centre of the screen
     ball = new Ball(width/2, height/2);
@@ -30,13 +32,13 @@ class RotatingPong {
     background(backgroundColor);
 
     // Update the paddles and ball by calling their update methods
-    horizontaleftPaddle.update();
+    horizontalPaddle.update();
     //horizontalrightPaddle.update();
     ball.update();
 
     // Check if the ball has collided with either paddle
-    ball.collide(horizontaleftPaddle);
-    ball.collide(horizontalrightPaddle);
+    //ball.collide(horizontaleftPaddle);
+    ball.collide(horizontalPaddle);
 
     // Check if the ball has gone off the screen
     if (ball.isOffScreen()) {
@@ -45,23 +47,23 @@ class RotatingPong {
     }
 
     // Display the paddles and the ball
-    horizontaleftPaddle.display();
-    horizontalrightPaddle.display();
+    //horizontaleftPaddle.display();
+    horizontalPaddle.display();
     ball.displayRotatingPong();
   }
 
 void reset() {
     ball.reset();
-    horizontaleftPaddle.reset();
-    horizontalrightPaddle.reset();
+    //horizontaleftPaddle.reset();
+    horizontalPaddle.reset();
     returnToMenu = false;
   }
 
 
   void keyPressed() {
     // Just call both paddles' own keyPressed methods
-    horizontaleftPaddle.keyPressed();
-    horizontalrightPaddle.keyPressed();
+    //horizontaleftPaddle.keyPressed();
+    horizontalPaddle.keyPressed();
 
 
     // Check if we should return to the menu
@@ -76,8 +78,8 @@ void reset() {
 
   void keyReleased() {
     // Call both paddles' keyReleased methods
-    horizontaleftPaddle.keyReleased();
-    horizontalrightPaddle.keyReleased();
+    //horizontaleftPaddle.keyReleased();
+    horizontalPaddle.keyReleased();
   }
 
  

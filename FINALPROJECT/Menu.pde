@@ -51,7 +51,7 @@ class Menu {
     else if (key == 't' || key == 'T') {
       selection = State.TEN_PONG;
     }
-     else if (key == 'r'|| key == 'T') {
+     else if (key == 'r'|| key == 'R') {
       selection= State.ROTATING_PONG;
     }
   }

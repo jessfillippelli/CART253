@@ -111,6 +111,7 @@ class Paddle {
       vy = SPEED;
     }
     
+    //TEN PONG
     // Check if the key is our up key
     if (key == leftKey) {
       // If so we want a negative y velocity
