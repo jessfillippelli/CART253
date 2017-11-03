@@ -7,6 +7,7 @@ class TenPong {
   Ball[] tenBalls;
 
   // The distance from the edge of the window a paddle should be
+  
   int tenHeight = 50;
 
   // The background colour during play 
@@ -18,10 +19,9 @@ class TenPong {
   TenPong()
   {
     middlePaddle = new Paddle(width/2, height - tenHeight, 'q', 'p',70,16); //70 AND 16 IS THE SIZE OF THE PADDLE
-
+ 
     tenBalls = new Ball [10];
     for (int i = 0; i < tenBalls.length; i++) {
-      //INFO FOR ME TO REMEMBER WHAT EVERYTHING IS 
       // variable 1 =x
       // variable 2 =y pos
       // variable 3 is xspeed
@@ -30,29 +30,29 @@ class TenPong {
       // variable 6 is ball id (0 if can be hit, 1 if not)
       if(i==0)
       {
-      tenBalls[i] = new Ball((int) random(width), (int) random(height), 2, 2,3,0);
+        tenBalls[i] = new Ball((int) random(width), (int) random(height), 2, 2,3,0); 
       }
       else
-    {
-      tenBalls[i] = new Ball((int) random(width), (int) random(height), 2, 2,3,1); //CHNAGED THE LOACTION TO RANDOM for array
-    } 
-  }
+      {
+         tenBalls[i] = new Ball((int) random(width), (int) random(height), 2, 2,3,1); //CHNAGED THE LOACTION TO RANDOM for array
+      }
+    }
   }
 
   void update()
   {
     // Fill the background each frame so we have animation
     background(backgroundColor);
-
     // Update the paddles and ball by calling their update methods
-    middlePaddle.update();
+    middlePaddle.updatehorizontal();
     for (int i = 0; i < tenBalls.length; i++) {
       tenBalls[i].update();
     }
 
     // Check if the ball has collided with either paddle
-    for (int i = 0; i < tenBalls.length; i++) {
+    for (int i = 0; i < tenBalls.length; i++) { 
       tenBalls[i].collide(middlePaddle);
+      
     }
 
     // Check if the ball has gone off the screen
@@ -78,6 +78,7 @@ class TenPong {
     // Check if we should return to the menu
     if (key == 'm' || key == 'M') {
       returnToMenu = true;
+    
     }
   }
 

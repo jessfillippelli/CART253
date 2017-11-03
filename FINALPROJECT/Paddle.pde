@@ -12,22 +12,22 @@ class Paddle {
   int HEIGHT = 70;
   int WIDTH = 16;
   int horizontalPaddle;
-
+  
   // The position and velocity of the paddle (note that vx isn't really used right now)
   int x;
   int y;
   int vx;
   int vy;
-
+  
+  
   // The fill color of the paddle
   color paddleColor = color(255);
 
   // The characters used to make the paddle move up and down, defined in constructor
   char upKey;
   char downKey;
-
-  //10 BALL PONG
-  char leftKey; 
+  
+  char leftKey;
   char rightKey;
 
 
@@ -50,14 +50,14 @@ class Paddle {
   }
 
 
-  //10 PONG PADDLE 
-  Paddle(int _x, int _y, char _leftKey, char _rightKey, int _w, int _h) { //Constructor
+//10 PONG PADDLE 
+ Paddle(int _x, int _y, char _leftKey, char _rightKey , int _w, int _h) { //Constructor
     x = _x;
     y = _y;
     vx = 0;
     vy = 0;
-    HEIGHT = _h;
-    WIDTH = _w;
+  HEIGHT = _h;
+  WIDTH = _w;
 
     leftKey = _leftKey;
     rightKey = _rightKey;
@@ -75,47 +75,52 @@ class Paddle {
     y += vy;
 
     // Constrain the paddle's y position to be in the window
-    y = constrain(y, 0 + HEIGHT/2, height - HEIGHT/2);
-  }
+    y = constrain(y,0 + HEIGHT/2,height - HEIGHT/2);
+  
+  
 
-  //for the 10 ball pong paddle
-  void updatehorizontal() {
+}
+
+void updatehorizontal() {
     // Update position with velocity (to move the paddle)
     x += vx;
     y += vy;
 
     // Constrain the paddle's y position to be in the window
-    x = constrain(x, 0 + WIDTH/2, width - WIDTH/2);
-
-    //FOR 10 PONG AND ROTATING PADDLE PONG
+    x = constrain(x,0 + WIDTH/2,width - WIDTH/2);
+  
+  //FOR 10 PONG AND ROTATING PADDLE PONG
     x += vx;
     y += vy;
-  }
+
+   
+
+}
 
   // display()
   //
   // Display the paddle at its location
-
+  
   void display() {
     // Set display properties
     noStroke();
     fill(paddleColor);
     rectMode(CENTER);
-
+    
     // Draw the paddle as a rectangle
     rect(x, y, WIDTH, HEIGHT);
   }
-
+  
   void reset() {
-    vx = 0;
-    vy = 0;
-    y = height/2;
+   vx = 0;
+   vy = 0;
+   y = height/2;
   }
 
   // keyPressed()
   //
   // Called when keyPressed is called in the main program
-
+  
   void keyPressed() {
     // Check if the key is our up key
     if (key == upKey) {
@@ -126,7 +131,7 @@ class Paddle {
       // If so we want a positive y velocity
       vy = SPEED;
     }
-
+    
     //TEN PONG
     // Check if the key is our up key
     if (key == leftKey) {
@@ -153,8 +158,8 @@ class Paddle {
       // If so it should stop
       vy = 0;
     }
-
-    if (key == leftKey && vx < 0) {
+    
+     if (key == leftKey && vx < 0) {
       // If so it should stop
       vx = 0;
     } // Otherwise check if the key is our down key and paddle is moving down 

@@ -25,9 +25,9 @@ class Ball {
 
   // The colour of the ball
   color ballColor = color(255);
-  //THESE 2 IDs ARE FOR THE 10 PONG. 
-  int pongId; 
+  int pongId;
   int ballId;
+
 
   /////////////// Constructor ///////////////
 
@@ -52,11 +52,13 @@ class Ball {
 
   //BALL FOR 10 PONG
   Ball(int _x, int _y, int _vx, int _vy, int _pongId, int _ballId) {
+    pongId = _pongId;
     SPEED = _vx;
     x = _x;
     y = _y;
     vx = SPEED;
     vy = SPEED;
+    ballId =_ballId;
     if (pongId ==3)
     {
       if (ballId ==0)
@@ -67,6 +69,7 @@ class Ball {
         ballColor = color(0);
       }
     }
+    
   }
 
   /////////////// Methods ///////////////
@@ -142,9 +145,9 @@ class Ball {
         println("red ball hit");
       }
     }
+
     // if the ball id is 0 then we change the score othrwise do nothing
   }
-
 
   // display()
   //
