@@ -1,13 +1,15 @@
+//BALL ID 0 = BALL CAN BE HIT = YOU GET A POINT (SCORE CAN GET HIGHTER)
+// BALL ID = 1 = CAN NOT GET HIT = NO POINT
+//KEYS TO PLAY THE GAME "q" and "p" MAKE SURE CAP LOCK IS OFF
 class TenPong {
 
   Paddle middlePaddle;
-  //TenBall ball;
   Ball[] tenBalls;
 
   // The distance from the edge of the window a paddle should be
-  int PADDLE_INSET = 8;
+  int tenHeight = 50;
 
-  // The background colour during play (black)
+  // The background colour during play 
   color backgroundColor = color(255, 182, 193);
 
   // A boolean to track whether we should return to the menu
@@ -15,12 +17,26 @@ class TenPong {
 
   TenPong()
   {
-    middlePaddle = new Paddle(width/2, height/2, 'a', 'g',70,16); //70 AND 16 IS THE SIZE OF THE PADDLE
+    middlePaddle = new Paddle(width/2, height - tenHeight, 'q', 'p',70,16); //70 AND 16 IS THE SIZE OF THE PADDLE
 
     tenBalls = new Ball [10];
     for (int i = 0; i < tenBalls.length; i++) {
-      tenBalls[i] = new Ball((int) random(width), (int) random(height), 2, 2); //CHNAGED THE LOACTION TO RANDOM for array
-    }
+      //INFO FOR ME TO REMEMBER WHAT EVERYTHING IS 
+      // variable 1 =x
+      // variable 2 =y pos
+      // variable 3 is xspeed
+      // variable 4 is yspeed
+      //variable 5 is ponggame id
+      // variable 6 is ball id (0 if can be hit, 1 if not)
+      if(i==0)
+      {
+      tenBalls[i] = new Ball((int) random(width), (int) random(height), 2, 2,3,0);
+      }
+      else
+    {
+      tenBalls[i] = new Ball((int) random(width), (int) random(height), 2, 2,3,1); //CHNAGED THE LOACTION TO RANDOM for array
+    } 
+  }
   }
 
   void update()
@@ -29,7 +45,6 @@ class TenPong {
     background(backgroundColor);
 
     // Update the paddles and ball by calling their update methods
-    //leftPaddle.update();
     middlePaddle.update();
     for (int i = 0; i < tenBalls.length; i++) {
       tenBalls[i].update();
@@ -48,7 +63,6 @@ class TenPong {
       }
     }
     // Display the paddles and the ball
-    //leftPaddle.display();
     middlePaddle.display();
     for (int i = 0; i < tenBalls.length; i++) {
       tenBalls[i].displayTenPong();
@@ -59,8 +73,6 @@ class TenPong {
 
   void keyPressed() {
     // Just call both paddles' own keyPressed methods
-    //leftPaddle.keyPressed();
-    //rightPaddle.keyPressed();
     middlePaddle.keyPressed();
 
     // Check if we should return to the menu
@@ -75,7 +87,6 @@ class TenPong {
 
   void keyReleased() {
     // Call both paddles' keyReleased methods
-    //leftPaddle.keyReleased();
     middlePaddle.keyReleased();
   }
   

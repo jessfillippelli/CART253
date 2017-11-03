@@ -12,12 +12,12 @@ class Ball {
   int SIZE = 16;
   Ball ball;
   Ball[] Balls= new Ball[9]; // added this for the array
-  
+
 
   // The location of the ball
   int x;
   int y;
- 
+
 
   // The velocity of the ball
   int vx;
@@ -25,7 +25,9 @@ class Ball {
 
   // The colour of the ball
   color ballColor = color(255);
-
+  //THESE 2 IDs ARE FOR THE 10 PONG. 
+  int pongId; 
+  int ballId;
 
   /////////////// Constructor ///////////////
 
@@ -38,22 +40,33 @@ class Ball {
   // NOTE that I'm using an underscore in front of the arguments to distinguish
   // them from the class's properties
 
- //BALL FOR BASIC AND BLUE PONG
-  Ball(int _x, int _y) {
+  //BALL FOR BASIC AND BLUE PONG
+  Ball(int _x, int _y, int _pongId, int _ballId) {
     x = _x;
     y = _y;
     vx = SPEED;
     vy = SPEED;
+    pongId = _pongId;
+    ballId = _ballId;
   }
 
-//BALL FOR 10 PONG
-Ball(int _x, int _y, int _vx, int _vy) {
-   SPEED = _vx;
+  //BALL FOR 10 PONG
+  Ball(int _x, int _y, int _vx, int _vy, int _pongId, int _ballId) {
+    SPEED = _vx;
     x = _x;
     y = _y;
     vx = SPEED;
     vy = SPEED;
-    //ellipse(56, 46, 55, 55);
+    if (pongId ==3)
+    {
+      if (ballId ==0)
+      {
+        ballColor = color(255, 0, 0);
+      } else
+      {
+        ballColor = color(0);
+      }
+    }
   }
 
   /////////////// Methods ///////////////
@@ -75,17 +88,17 @@ Ball(int _x, int _y, int _vx, int _vy) {
       vy = -vy;
     }
   }
-  
+
   // reset()
   //
   // Resets the ball to the centre of the screen.
   // Note that it KEEPS its velocity
-  
+
   void reset() {
     x = width/2;
     y = height/2;
   }
-  
+
   // isOffScreen()
   //
   // Returns true if the ball is off the left or right side of the window
@@ -93,7 +106,7 @@ Ball(int _x, int _y, int _vx, int _vy) {
   // (If we wanted to return WHICH side it had gone off, we'd have to return
   // something like an int (e.g. 0 = not off, 1 = off left, 2 = off right)
   // or a String (e.g. "ON SCREEN", "OFF LEFT", "OFF RIGHT")
-  
+
   boolean isOffScreen() {
     return (x + SIZE/2 < 0 || x - SIZE/2 > width);
   }
@@ -110,7 +123,7 @@ Ball(int _x, int _y, int _vx, int _vy) {
     boolean insideRight = (x - SIZE/2 < paddle.x + paddle.WIDTH/2);
     boolean insideTop = (y + SIZE/2 > paddle.y - paddle.HEIGHT/2);
     boolean insideBottom = (y - SIZE/2 < paddle.y + paddle.HEIGHT/2);
-    
+
     // Check if the ball overlaps with the paddle
     if (insideLeft && insideRight && insideTop && insideBottom) {
       // If it was moving to the left
@@ -123,8 +136,15 @@ Ball(int _x, int _y, int _vx, int _vy) {
       }
       // And make it bounce
       vx = -vx;
+
+      if (ballId ==0)
+      {
+        println("red ball hit");
+      }
     }
+    // if the ball id is 0 then we change the score othrwise do nothing
   }
+
 
   // display()
   //
@@ -139,28 +159,22 @@ Ball(int _x, int _y, int _vx, int _vy) {
 
     // Draw the ball
     rect(x, y, SIZE, SIZE);
-    
-   
-   
   }
-     //THE 10 PONG BALL 
-     void displayTenPong() {
+  //THE 10 PONG BALL 
+  void displayTenPong() {
     // Set up the appearance of the ball (no stroke, a fill, and rectMode as CENTER)
     noStroke();
     fill(ballColor);
     rectMode(CENTER);
     ellipse(x, y, SIZE, SIZE);
-   
   }
 
   //rotating ball
-     void displayRotatingPong() {
+  void displayRotatingPong() {
     // Set up the appearance of the ball (no stroke, a fill, and rectMode as CENTER)
     noStroke();
     fill(ballColor);
     rectMode(CENTER);
     ellipse(x, y, SIZE, SIZE);
-   
   }
-
 }

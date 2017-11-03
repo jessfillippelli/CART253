@@ -37,7 +37,7 @@ class BasicPong {
     rightPaddle = new Paddle(width - PADDLE_INSET, height/2, '0', 'p');
 
     // Create the ball at the centre of the screen
-    ball = new Ball(width/2, height/2);
+    ball = new Ball(width/2, height/2,0,0);
   }
 
   // update()
