@@ -141,11 +141,11 @@ class Paddle {
     rect(0, 0, WIDTH, HEIGHT);
     popMatrix();
     
-   //ALL THE TEXT FOR THE
+   //ALL THE TEXT INSTRUCTION FOR THE ROTATING PONG GAME 
     textSize(25);
-    text("Press M to return to menu :) ", width/2,350);
-    text("2 and R to move right of left",width/2, 388);
-    text("3 and E to move up and down",width/2, 398);
+    text("Press M to return to menu :) ", width/2,320);
+    text("2 and R to move right of left",width/2, 353);
+    text("3 and E to move up and down",width/2, 385);
   }
 
   void reset() {
