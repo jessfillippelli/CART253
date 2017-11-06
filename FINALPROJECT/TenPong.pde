@@ -9,6 +9,7 @@ class TenPong {
   // The distance from the edge of the window a paddle should be
 
   int tenHeight = 50;
+  PImage img;  //FOR THE OVEROVER PIC 
 
   // The background colour during play 
   color backgroundColor = color(255, 182, 193);
@@ -74,10 +75,14 @@ class TenPong {
     text(middlePaddle.score, middlePaddle.x, middlePaddle.y );
 
 
+    //this is after you win
     if (middlePaddle.score == numberOfPointsToWin) {
-      textSize(20);
+      background(255, 182, 193);
+      img = loadImage("game_over.jpg");
+      image(img, 154,20,width/2, height/2);
+      textSize(27);
       fill(255);
-      text("Congrats you won!!", width/4.5, height/2);
+      text("Congrats you won!!", width/2, 300);
     }
     
     displayInstructions();
