@@ -1,7 +1,7 @@
 import processing.sound.*;
 
 //Started  exercise 07
-
+//This ex is not mine, i just really like it. i found it on the proccessing website 
 int rectWidth;
 SoundFile tone;
 
@@ -9,7 +9,7 @@ SoundFile tone;
 void setup() {
   size(640, 360);
   noStroke();
-  background(0);
+  background(255,105,180);
   rectWidth = width/4;
   tone = new SoundFile(this, "sounds/tone01.wav");
   
@@ -38,6 +38,7 @@ void keyPressed() {
     float x = map(keyIndex, 0, 25, 0, width - rectWidth);
     rect(x, 0, rectWidth, height);
   }
+    // this is where the sound plays 
     if((key >= 'A' && key <='Z') || (key >= 'a' && key <= 'z') ){
     println("you working?");
     tone.play();
