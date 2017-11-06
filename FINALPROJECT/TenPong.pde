@@ -95,6 +95,7 @@ class TenPong {
     text("Press M to return to menu :) ", width/2, 3*height/4);
     text("Q and P to play",width/2, 388);
     fill(255);
+    
   }
 
 
