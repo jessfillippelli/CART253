@@ -3,6 +3,7 @@ import processing.sound.*;
 //Started  exercise 07
 
 int rectWidth;
+SoundFile tone;
 
    
 void setup() {
@@ -10,12 +11,15 @@ void setup() {
   noStroke();
   background(0);
   rectWidth = width/4;
+  tone = new SoundFile(this, "sounds/tone01.wav");
   
 }
 
 void draw() { 
   // keep draw() here to continue looping while waiting for keys
-  
+  textSize(15);
+  fill(255);
+  text("Press any key :) ", width/2, 3*height/4);
 }
 
 void keyPressed() {
@@ -33,6 +37,10 @@ void keyPressed() {
     fill(millis() % 255);
     float x = map(keyIndex, 0, 25, 0, width - rectWidth);
     rect(x, 0, rectWidth, height);
+  }
+    if((key >= 'A' && key <='Z') || (key >= 'a' && key <= 'z') ){
+    println("you working?");
+    tone.play();
   }
  
 }
