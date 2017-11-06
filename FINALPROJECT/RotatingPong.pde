@@ -5,10 +5,9 @@ class RotatingPong {
   Ball ball;
 
   // The distance from the edge of the window a paddle should be
-  //this int is to make the paddle horizontal 
-  int  horizontalHeight = 16; 
+  int  horizontalHeight = 16;
 
-  // The background colour during play
+  // The background colour during play 
   color backgroundColor = color(147, 112, 219);
 
 
@@ -17,11 +16,11 @@ class RotatingPong {
 
   RotatingPong() {
     // Create 2 PADDLES IN THE MIDDLE OF THE SCREEN
-    horizontalPaddle = new Paddle(width/2, height - horizontalHeight, '2', 'r', 100, 16);
+    horizontalPaddle = new Paddle(width/2, height - horizontalHeight, '2', 'r', 100, 16,'3','e');
 
 
     // Create the ball at the centre of the screen
-    ball = new Ball(width/2, height/2,2,0);
+    ball = new Ball(width/2, height/2, 2, 0);
   }
 
   void update() {
@@ -30,7 +29,6 @@ class RotatingPong {
 
     // Update the paddles and ball by calling their update methods
     horizontalPaddle.updatehorizontal();
-
     ball.update();
 
     // Check if the ball has collided with either paddle
@@ -43,7 +41,7 @@ class RotatingPong {
     }
 
     // Display the paddles and the ball
-    horizontalPaddle.display();
+    horizontalPaddle.displayRotatingPong();
     ball.displayRotatingPong();
   }
 

@@ -63,6 +63,7 @@ void draw() {
   switch (state) {
     // If our state is NONE, we do nothing
   case NONE:
+
     break;
 
     // If our state is TITLE we update the title object

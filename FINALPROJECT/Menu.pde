@@ -28,6 +28,7 @@ class Menu {
   
   void display() {
     background(0);
+    fill(255);
     textAlign(CENTER, CENTER);
     textSize(32);
     text("(P)ONG", width/2, 50);

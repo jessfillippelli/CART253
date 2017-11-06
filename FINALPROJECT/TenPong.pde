@@ -7,7 +7,7 @@ class TenPong {
   Ball[] tenBalls;
 
   // The distance from the edge of the window a paddle should be
-  
+
   int tenHeight = 50;
 
   // The background colour during play 
@@ -15,11 +15,13 @@ class TenPong {
 
   // A boolean to track whether we should return to the menu
   boolean returnToMenu = false;
+  int numberOfPointsToWin = 1;
+
 
   TenPong()
   {
-    middlePaddle = new Paddle(width/2, height - tenHeight, 'q', 'p',70,16); //70 AND 16 IS THE SIZE OF THE PADDLE
- 
+    middlePaddle = new Paddle(width/2, height - tenHeight, 'q', 'p', 70, 16); //70 AND 16 IS THE SIZE OF THE PADDLE
+
     tenBalls = new Ball [10];
     for (int i = 0; i < tenBalls.length; i++) {
       // variable 1 =x
@@ -28,13 +30,12 @@ class TenPong {
       // variable 4 is yspeed
       //variable 5 is ponggame id
       // variable 6 is ball id (0 if can be hit, 1 if not)
-      if(i==0)
+      if (i==0)
       {
-        tenBalls[i] = new Ball((int) random(width), (int) random(height), 2, 2,3,0); 
-      }
-      else
+        tenBalls[i] = new Ball((int) random(width), (int) random(height), 2, 2, 3, 0);
+      } else
       {
-         tenBalls[i] = new Ball((int) random(width), (int) random(height), 2, 2,3,1); //CHNAGED THE LOACTION TO RANDOM for array
+        tenBalls[i] = new Ball((int) random(width), (int) random(height), 2, 2, 3, 1); //CHNAGED THE LOACTION TO RANDOM for array
       }
     }
   }
@@ -52,7 +53,6 @@ class TenPong {
     // Check if the ball has collided with either paddle
     for (int i = 0; i < tenBalls.length; i++) { 
       tenBalls[i].collide(middlePaddle);
-      
     }
 
     // Check if the ball has gone off the screen
@@ -67,6 +67,29 @@ class TenPong {
     for (int i = 0; i < tenBalls.length; i++) {
       tenBalls[i].displayTenPong();
     }
+
+    //ELEMENT FOR THE SCORE (TEN PONG)
+    textSize(32);
+    fill(0); 
+    text(middlePaddle.score, middlePaddle.x, middlePaddle.y );
+
+
+    if (middlePaddle.score == numberOfPointsToWin) {
+      textSize(20);
+      fill(255);
+      text("Congrats you won!!", width/4.5, height/2);
+    }
+    
+    displayInstructions();
+  }
+  
+  //TEXT FOR THE 10 PONG
+  void displayInstructions() {   
+    textSize(25);
+    fill(255);
+    text("Press M to return to menu :) ", width/2, 3*height/4);
+    text("Q and P to play",width/2, 388);
+    fill(255);
   }
 
 
@@ -78,7 +101,6 @@ class TenPong {
     // Check if we should return to the menu
     if (key == 'm' || key == 'M') {
       returnToMenu = true;
-    
     }
   }
 
@@ -90,9 +112,9 @@ class TenPong {
     // Call both paddles' keyReleased methods
     middlePaddle.keyReleased();
   }
-  
+
   void reset() {
-  for (int i = 0; i < tenBalls.length; i++) {
+    for (int i = 0; i < tenBalls.length; i++) {
       tenBalls[i].reset();
     }
     middlePaddle.reset();

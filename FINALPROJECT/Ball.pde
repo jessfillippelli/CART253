@@ -139,10 +139,13 @@ class Ball {
       }
       // And make it bounce
       vx = -vx;
+      
+      
 
       if (ballId ==0)
       {
         println("red ball hit");
+        paddle.score++; // for the 10 ball pong
       }
     }
 
