@@ -14,7 +14,8 @@ enum State {
     BASIC_PONG, 
     BLUE_PONG, 
     TEN_PONG, //ADDED THIS FOR THE 10 BALL PONG
-    ROTATING_PONG ////ADDED THIS FOR THE ROTATING PONG GAME
+    ROTATING_PONG, ////ADDED THIS FOR THE ROTATING PONG GAME
+    LEADERBOARD
 }
 // This is the variable that actually tracks the state in the game
 State state;
@@ -27,6 +28,7 @@ BasicPong basicPong;
 BluePong bluePong;
 TenPong tenPong; //ADDED THIS FOR THE 10 BALL PONG 
 RotatingPong rotatingPong; //ADDED THIS FOR THE ROTATING PONG GAME
+Leaderboard leaderboard;
 
 // setup()
 //
