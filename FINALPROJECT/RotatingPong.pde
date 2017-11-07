@@ -3,14 +3,11 @@ class RotatingPong {
 
   Paddle horizontalPaddle;
   Ball ball;
+  Leaderboard leaderboard;
 
   // The distance from the edge of the window a paddle should be
   int  horizontalHeight = 16;
   
-  //TABLE 
-  int x= 170;
-  int y=40;
-
   // The background colour during play 
   color backgroundColor = color(147, 112, 219);
 

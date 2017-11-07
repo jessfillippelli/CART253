@@ -45,6 +45,7 @@ void setup() {
   bluePong = new BluePong();
   tenPong = new TenPong(); //ADDED THIS FOR THE 10 BALL PONG
   rotatingPong = new RotatingPong(); //ADDED THIS FOR THE ROTATING PONG GAME
+  leaderboard = new Leaderboard();
 
 
 
