@@ -3,7 +3,7 @@ class Leaderboard {
 int x= 170;
 int y=40;
 
-void draw() {
+Leaderboard() {
   background(147, 112, 219);
 
   fill(255, 10);
