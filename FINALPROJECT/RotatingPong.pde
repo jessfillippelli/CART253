@@ -31,8 +31,10 @@ class RotatingPong {
     // Update the paddles and ball by calling their update methods
     horizontalPaddle.updatehorizontal();
     ball.update();
-    leaderboard.update();
-    leaderboard.display();
+    
+    //display the table
+    leaderBoard.update();
+    leaderBoard.display();
 
     // Check if the ball has collided with either paddle
     ball.collide(horizontalPaddle);
