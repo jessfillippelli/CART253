@@ -1,13 +1,36 @@
-class Leaderboard {
+class LeaderBoard {
 
 int x= 170;
 int y=40;
+ int m =0;
+ boolean minuteChanged =false;
+int s;
 
-void leaderBoard() {
-  background(147, 112, 219);
+
+LeaderBoard() {
+}
+
+void display()
+{
+  // uodate the second variable
+   s =  (millis()/100)%60;
+  if(s == 59 && minuteChanged ==false)
+  {
+    
+    m++;
+    minuteChanged=true;
+  }
+  
+  if(s!=59)
+  {
+     minuteChanged=false;
+  }
+ // background(147, 112, 219);
 
   fill(255, 10);
-  rect(x, y, 300, 400);
+  stroke(0);
+  rectMode(CORNER);
+  rect(x, y, 300, 300);
 
   //top
   rect(x, y, 300, 50); //x,x w,h
@@ -21,7 +44,7 @@ void leaderBoard() {
   rect(x, y+200, 150, 50);
   rect(x, y+250, 150, 50);
   rect(x, y+300, 150, 50);
-  rect(x, y+350, 150, 50);
+  //rect(x, y+350, 150, 50);
 
   //RIGHT
   rect(x+150, y+50, 150, 50); 
@@ -30,7 +53,7 @@ void leaderBoard() {
   rect(x+150, y+200, 150, 50);
   rect(x+150, y+250, 150, 50);
   rect(x+150, y+300, 150, 50);
-  rect(x+150, y+350, 150, 50);
+  //rect(x+150, y+350, 150, 50);
 
   textAlign(CENTER, CENTER);
   textSize(30);
@@ -68,9 +91,10 @@ void leaderBoard() {
   text("2 Hours", 395,311);
   
   ////6TH ROW
-  //textSize(20);
-  //text("BETH", 244,360); //first number (number has to up) its the width the 2nd number is the height
-  //textSize(20);
-  //text("2 Hours", 395,360);
+  textSize(20);
+  text("YOU", 244,360); //first number (number has to up) its the width the 2nd number is the height
+  textSize(20);
+  text(m+":"+s, 395,360);
+
 }
 }

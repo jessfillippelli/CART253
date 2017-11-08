@@ -20,13 +20,17 @@ class Ball {
 
 
   // The velocity of the ball
-  int vx;
-  int vy;
+  //int vx;
+  //int vy;
 
   // The colour of the ball
   color ballColor = color(255);
   int pongId;
   int ballId;
+  
+  //for the other ones 
+  float vx = random(10);
+  float vy = random(30);
 
 
   /////////////// Constructor ///////////////
@@ -56,8 +60,8 @@ class Ball {
     SPEED = _vx;
     x = _x;
     y = _y;
-    vx = SPEED;
-    vy = SPEED;
+    vx = _vx;
+    vy = _vy;
     ballId =_ballId;
     if (pongId ==3)
     {

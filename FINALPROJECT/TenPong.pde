@@ -19,12 +19,16 @@ class TenPong {
   int numberOfPointsToWin = 1;
 
 
+
+
   TenPong()
   {
     middlePaddle = new Paddle(width/2, height - tenHeight, 'q', 'p', 70, 16); //70 AND 16 IS THE SIZE OF THE PADDLE
 
     tenBalls = new Ball [10];
     for (int i = 0; i < tenBalls.length; i++) {
+       int xspeed = (int)random(-10,10);
+       int yspeed = (int)random(5,8);
       // variable 1 =x
       // variable 2 =y pos
       // variable 3 is xspeed
@@ -33,10 +37,10 @@ class TenPong {
       // variable 6 is ball id (0 if can be hit, 1 if not)
       if (i==0)
       {
-        tenBalls[i] = new Ball((int) random(width), (int) random(height), 2, 2, 3, 0);
+        tenBalls[i] = new Ball((int) random(width), (int) random(height), xspeed, yspeed, 3, 0);
       } else
       {
-        tenBalls[i] = new Ball((int) random(width), (int) random(height), 2, 2, 3, 1); //CHNAGED THE LOACTION TO RANDOM for array
+        tenBalls[i] = new Ball((int) random(width), (int) random(height), xspeed, yspeed, 3, 1); //CHNAGED THE LOACTION TO RANDOM for array
       }
     }
   }
@@ -90,10 +94,10 @@ class TenPong {
   
   //TEXT FOR THE 10 PONG
   void displayInstructions() {   
-    textSize(25);
+    textSize(20);
     fill(255);
-    text("Press M to return to menu :) ", width/2, 3*height/4);
-    text("Q and P to play",width/2, 388);
+    text("M = menu! :) ", width/2, 3*height/4);
+    text("q and p to play",width/2, 388);
     fill(255);
     
   }
@@ -103,7 +107,6 @@ class TenPong {
   void keyPressed() {
     // Just call both paddles' own keyPressed methods
     middlePaddle.keyPressed();
-
     // Check if we should return to the menu
     if (key == 'm' || key == 'M') {
       returnToMenu = true;
@@ -125,5 +128,7 @@ class TenPong {
     }
     middlePaddle.reset();
     returnToMenu = false;
+    
+  
   }
 }

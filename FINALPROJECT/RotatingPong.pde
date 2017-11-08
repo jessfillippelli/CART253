@@ -3,7 +3,7 @@ class RotatingPong {
 
   Paddle horizontalPaddle;
   Ball ball;
-  Leaderboard leaderboard;
+  
 
   // The distance from the edge of the window a paddle should be
   int  horizontalHeight = 16;
@@ -33,8 +33,6 @@ class RotatingPong {
     ball.update();
     
     //display the table
-    leaderBoard.update();
-    leaderBoard.display();
 
     // Check if the ball has collided with either paddle
     ball.collide(horizontalPaddle);
@@ -48,6 +46,7 @@ class RotatingPong {
     // Display the paddles and the ball
     horizontalPaddle.displayRotatingPong();
     ball.displayRotatingPong();
+    leaderBoard.display();
   }
 
   void reset() {

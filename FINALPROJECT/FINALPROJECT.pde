@@ -28,7 +28,7 @@ BasicPong basicPong;
 BluePong bluePong;
 TenPong tenPong; //ADDED THIS FOR THE 10 BALL PONG 
 RotatingPong rotatingPong; //ADDED THIS FOR THE ROTATING PONG GAME
-Leaderboard leaderBoard;
+LeaderBoard leaderBoard;
 
 // setup()
 //
@@ -45,7 +45,7 @@ void setup() {
   bluePong = new BluePong();
   tenPong = new TenPong(); //ADDED THIS FOR THE 10 BALL PONG
   rotatingPong = new RotatingPong(); //ADDED THIS FOR THE ROTATING PONG GAME
-  leaderboard = new LeaderBoard();
+  leaderBoard = new LeaderBoard();
 
 
 
@@ -134,6 +134,7 @@ void draw() {
     }
     break;
   }
+  
 }
 
 // keyPressed()
