@@ -80,7 +80,7 @@ class TenPong {
 
 
     //this is after you win
-    if (middlePaddle.score == numberOfPointsToWin) {
+    if (middlePaddle.score >= numberOfPointsToWin) {
       background(255, 182, 193);
       img = loadImage("game_over.jpg");
       image(img, 154,20,width/2, height/2);
@@ -127,6 +127,7 @@ class TenPong {
       tenBalls[i].reset();
     }
     middlePaddle.reset();
+    middlePaddle.y = height - tenHeight;
     returnToMenu = false;
     
   

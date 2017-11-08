@@ -1,5 +1,5 @@
 // Pong(s)
-// by Pippin Barr
+// by JESSICA FILIPPELLI
 //
 // A version of Pong that can run multiple versions of the game.
 // Each version is a class and the game is able to show a title screen,
@@ -14,8 +14,8 @@ enum State {
     BASIC_PONG, 
     BLUE_PONG, 
     TEN_PONG, //ADDED THIS FOR THE 10 BALL PONG
-    ROTATING_PONG, ////ADDED THIS FOR THE ROTATING PONG GAME
-    LEADERBOARD
+    ROTATING_PONG ////ADDED THIS FOR THE ROTATING PONG GAME
+    
 }
 // This is the variable that actually tracks the state in the game
 State state;

@@ -152,6 +152,7 @@ class Paddle {
     vx = 0;
     vy = 0;
     y = height/2;
+    score = 0;
   }
 
   // keyPressed()
