@@ -36,21 +36,21 @@ class RandomPong {
     // Fill the background each frame so we have animation
     background(backgroundColor);
 
-    if (frameCount % 400 > 300 ) {
+    if (frameCount % 700 > 600 ) {
       ball.SIZE = 75;
       ball.shape = "rect";
       leftPaddle.HEIGHT = 15;
       rightPaddle.WIDTH = 27;
       backgroundColor = color(173, 216, 230); //light blue 
     }
-    else if (frameCount % 400 > 200) {
+    else if (frameCount % 700 > 500) {
       ball.SIZE = 27;
       ball.shape = "ellipse";
       rightPaddle.WIDTH = 35;
       leftPaddle.HEIGHT = 80;
       backgroundColor = color(240, 128, 128); // light Coral
     }
-  else if (frameCount % 400 > 100) {
+  else if (frameCount % 700 > 400) {
       ball.SIZE = 50;
       ball.shape = "triangle";
       rightPaddle.WIDTH = 50;
@@ -58,7 +58,7 @@ class RandomPong {
       backgroundColor = color(250, 250, 210); //light yellow
     }
     
-     else if (frameCount % 400 > 0) {
+     else if (frameCount % 700 > 300) {
       ball.SIZE = 50;
       ball.shape = "star";
       rightPaddle.WIDTH = 50;
@@ -66,10 +66,37 @@ class RandomPong {
       backgroundColor = color(250, 250, 210); //light yellow
     }
     
+    else if (frameCount % 700 > 200) {
+      ball.SIZE = 25;
+      ball.shape = "ellipse";
+      rightPaddle.WIDTH = 40;
+      leftPaddle.HEIGHT = 200;
+      backgroundColor = color(144, 238, 144); //light green
+    }
+    
+ else if (frameCount % 700 > 100) {
+      ball.SIZE = 150;
+      ball.shape = "rect";
+      rightPaddle.WIDTH = 46;
+      leftPaddle.HEIGHT = 99;
+      backgroundColor = color(255, 182, 193); //light pink
+    }
 
+ else if (frameCount % 700 > 0) {
+      ball.SIZE = 118;
+      ball.shape = "triangle";
+      rightPaddle.WIDTH = 40;
+      leftPaddle.HEIGHT = 100;
+      backgroundColor = color( 255, 160, 122); //light orange
+    }
 
-
-
+ else if (frameCount % 700 > 0) {
+      ball.SIZE = 60;
+      ball.shape = "star";
+      rightPaddle.WIDTH = 69;
+      leftPaddle.HEIGHT = 40;
+      backgroundColor = color(  32, 178, 170); //light sea green
+    }
 
 
 
