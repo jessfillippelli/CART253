@@ -14,8 +14,8 @@ enum State {
     BASIC_PONG, 
     BLUE_PONG, 
     TEN_PONG, //ADDED THIS FOR THE 10 BALL PONG
-    ROTATING_PONG ////ADDED THIS FOR THE ROTATING PONG GAME
-    
+    ROTATING_PONG, ////ADDED THIS FOR THE ROTATING PONG GAME
+    RANDOM_PONG
 }
 // This is the variable that actually tracks the state in the game
 State state;
@@ -29,6 +29,7 @@ BluePong bluePong;
 TenPong tenPong; //ADDED THIS FOR THE 10 BALL PONG 
 RotatingPong rotatingPong; //ADDED THIS FOR THE ROTATING PONG GAME
 LeaderBoard leaderBoard;
+RandomPong randomPong;
 
 // setup()
 //
@@ -46,7 +47,7 @@ void setup() {
   tenPong = new TenPong(); //ADDED THIS FOR THE 10 BALL PONG
   rotatingPong = new RotatingPong(); //ADDED THIS FOR THE ROTATING PONG GAME
   leaderBoard = new LeaderBoard();
-
+  randomPong = new RandomPong();
 
 
   // We start our state in the title screen
@@ -123,8 +124,8 @@ void draw() {
       tenPong.reset();
     }
     break;
-    
-          //CASE FOR THE ROTATING PONG
+
+    //CASE FOR THE ROTATING PONG
   case ROTATING_PONG:
     rotatingPong.update();
     if (rotatingPong.returnToMenu) {
@@ -133,8 +134,19 @@ void draw() {
       rotatingPong.reset();
     }
     break;
+
+    //CASE FOR THE RANDOM PONG
+  case RANDOM_PONG:
+    randomPong.update();
+    if (randomPong.returnToMenu) {
+      state = State.MENU;
+      randomPong.returnToMenu = false;
+      randomPong.reset();
+      //function to check score
+    //checkScore();
+    }
+    break;
   }
-  
 }
 
 // keyPressed()
@@ -163,13 +175,19 @@ void keyPressed() {
     bluePong.keyPressed();
     break;
 
+    //for the 10 pong
   case TEN_PONG:
     tenPong.keyPressed();
     break;
-   
+
     //ADDED THIS FOR THE ROTATING PONG
-    case ROTATING_PONG:
+  case ROTATING_PONG:
     rotatingPong.keyPressed();
+    break;
+
+    //ADDED THIS FOR THE random PONG
+  case RANDOM_PONG:
+    randomPong.keyPressed();
     break;
   }
 }
@@ -204,10 +222,15 @@ void keyReleased() {
   case TEN_PONG:
     tenPong.keyReleased();
     break;
-    
-     //ADDED THIS FOR ROTATING PONG
+
+    //ADDED THIS FOR ROTATING PONG
   case ROTATING_PONG:
     rotatingPong.keyReleased();
+    break;
+
+    //ADDED THIS FOR random PONG
+  case RANDOM_PONG:
+    randomPong.keyReleased();
     break;
   }
 }

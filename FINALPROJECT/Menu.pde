@@ -35,6 +35,7 @@ class Menu {
     text("(B)LUE PONG", width/2, 100);
     text("(T)EN PONG", width/2, 150);
     text("(R)OTATING PONG", width/2, 200);
+    text("R(A)NDOM PONG", width/2,250);
   }
 
   // keyPressed()
@@ -55,7 +56,11 @@ class Menu {
      else if (key == 'r'|| key == 'R') {
       selection= State.ROTATING_PONG;
     }
-  }
+ else if (key == 'a'|| key == 'A') {
+      selection= State.RANDOM_PONG;
+    }  
+
+}
 
   // keyReleased()
   //
