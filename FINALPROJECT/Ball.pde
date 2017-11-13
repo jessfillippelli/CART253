@@ -212,5 +212,6 @@ class Ball {
     fill(ballColor);
     rectMode(CENTER);
     ellipse(x, y, SIZE, SIZE);
+    //SPEED = 25;
   }
 }
