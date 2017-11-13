@@ -12,7 +12,7 @@ class Ball {
   int SIZE = 16;
   Ball ball;
   Ball[] Balls= new Ball[9]; // added this for the array
-
+PImage img;
   String shape = "rect";
 
   // The location of the ball
@@ -177,6 +177,8 @@ class Ball {
       triangle(x, y-SIZE, x+SIZE/2, y, x-SIZE/2, y);
     } else if (shape.equals("star")) {
       star(0, 0, 30, 70, 5);
+    } else if (shape.equals("image")){
+      image(img, 0, 0);
     }
 //DARW THE SHAPES FOR THE RANDOM PONG  
 }
