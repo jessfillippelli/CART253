@@ -170,6 +170,7 @@ class Ball {
     // THIS IS FOR TEH RAdo
     if (shape.equals("rect")) {
       rect(x, y, SIZE, SIZE);
+      fill(255);
     } else if (shape.equals("ellipse")) {
       ellipse(x, y, SIZE, SIZE);
     } else if (shape.equals("triangle")) {

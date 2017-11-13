@@ -59,7 +59,8 @@ class RandomPong {
     }
     
      else if (frameCount % 700 > 300) {
-      ball.SIZE = 50;
+      ball.SIZE = 50; 
+      //BallColor = color(255);
       ball.shape = "star";
       rightPaddle.WIDTH = 50;
       leftPaddle.HEIGHT = 100;
