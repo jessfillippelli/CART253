@@ -4,7 +4,7 @@ class RandomPong {
   Paddle leftPaddle;
   Paddle rightPaddle;
   Ball ball;
-
+ PImage img;
   // The distance from the edge of the window a paddle should be
   int PADDLE_INSET = 8;
 
@@ -61,7 +61,8 @@ class RandomPong {
      else if (frameCount % 700 > 300) {
       ball.SIZE = 50; 
       //BallColor = color(255);
-      ball.shape = "star";
+      //ball.shape 
+      img = loadImage("norman.jpg");
       rightPaddle.WIDTH = 50;
       leftPaddle.HEIGHT = 100;
       backgroundColor = color(250, 250, 210); //light yellow
