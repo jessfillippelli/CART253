@@ -177,7 +177,8 @@ class Ball {
     } else if (shape.equals("star")) {
       star(0, 0, 30, 70, 5);
     }
-  }
+//DARW THE SHAPES FOR THE RANDOM PONG  
+}
 
   void star(float x, float y, float radius1, float radius2, int npoints) {
     float angle = TWO_PI / npoints;

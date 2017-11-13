@@ -35,7 +35,7 @@ class RandomPong {
   void update() {
     // Fill the background each frame so we have animation
     background(backgroundColor);
-
+// THE FRAME RATE FOR THE RANDOM SHAPES
     if (frameCount % 700 > 600 ) {
       ball.SIZE = 75;
       ball.shape = "rect";
