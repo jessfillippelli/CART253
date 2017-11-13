@@ -1,4 +1,4 @@
-// Ball
+/// Ball
 //
 // A class that defines a ball that can move around in the window, bouncing
 // of the top and bottom, and can detect collision with a paddle and bounce off that.
@@ -13,6 +13,7 @@ class Ball {
   Ball ball;
   Ball[] Balls= new Ball[9]; // added this for the array
 
+  String shape = "rect";
 
   // The location of the ball
   int x;
@@ -27,7 +28,7 @@ class Ball {
   color ballColor = color(255);
   int pongId;
   int ballId;
-  
+
   //for the other ones 
   float vx = random(10);
   float vy = random(30);
@@ -73,7 +74,6 @@ class Ball {
         ballColor = color(0);
       }
     }
-    
   }
 
   /////////////// Methods ///////////////
@@ -143,8 +143,8 @@ class Ball {
       }
       // And make it bounce
       vx = -vx;
-      
-      
+
+
 
       if (ballId ==0)
       {
@@ -168,8 +168,15 @@ class Ball {
     rectMode(CENTER);
 
     // Draw the ball
-    rect(x, y, SIZE, SIZE);
+    if (shape.equals("rect")) {
+      rect(x, y, SIZE, SIZE);
+    } else if (shape.equals("ellipse")) {
+      ellipse(x, y, SIZE, SIZE);
+    } else if (shape.equals("triangle")) {
+      triangle(x, y-SIZE, x+SIZE/2, y, x-SIZE/2, y);
+    }
   }
+
   //THE 10 PONG BALL 
   void displayTenPong() {
     // Set up the appearance of the ball (no stroke, a fill, and rectMode as CENTER)
