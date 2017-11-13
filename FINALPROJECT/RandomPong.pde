@@ -36,27 +36,36 @@ class RandomPong {
     // Fill the background each frame so we have animation
     background(backgroundColor);
 
-    if (frameCount % 300 > 200 ) {
+    if (frameCount % 400 > 300 ) {
       ball.SIZE = 75;
       ball.shape = "rect";
       leftPaddle.HEIGHT = 15;
       rightPaddle.WIDTH = 27;
       backgroundColor = color(173, 216, 230); //light blue 
     }
-    else if (frameCount % 300 > 100) {
+    else if (frameCount % 400 > 200) {
       ball.SIZE = 27;
       ball.shape = "ellipse";
       rightPaddle.WIDTH = 35;
       leftPaddle.HEIGHT = 80;
       backgroundColor = color(240, 128, 128); // light Coral
     }
-  else if (frameCount % 300 > 0) {
+  else if (frameCount % 400 > 100) {
       ball.SIZE = 50;
       ball.shape = "triangle";
       rightPaddle.WIDTH = 50;
       leftPaddle.HEIGHT = 100;
-      backgroundColor = color(224, 255, 255); //light cyan
+      backgroundColor = color(250, 250, 210); //light yellow
     }
+    
+     else if (frameCount % 400 > 0) {
+      ball.SIZE = 50;
+      ball.shape = "star";
+      rightPaddle.WIDTH = 50;
+      leftPaddle.HEIGHT = 100;
+      backgroundColor = color(250, 250, 210); //light yellow
+    }
+    
 
 
 
