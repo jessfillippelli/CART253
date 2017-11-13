@@ -75,7 +75,7 @@ class RandomPong {
     }
     
  else if (frameCount % 700 > 100) {
-      ball.SIZE = 150;
+      ball.SIZE = 115;
       ball.shape = "rect";
       rightPaddle.WIDTH = 46;
       leftPaddle.HEIGHT = 99;
