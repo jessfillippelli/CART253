@@ -4,7 +4,7 @@ class RandomPong {
   Paddle leftPaddle;
   Paddle rightPaddle;
   Ball ball;
- PImage img;
+
   // The distance from the edge of the window a paddle should be
   int PADDLE_INSET = 8;
 
@@ -25,6 +25,8 @@ class RandomPong {
 
     // Create the ball at the centre of the screen
     ball = new Ball(width/2, height/2, 0, 0);
+    
+ 
   }
 
   // update()
@@ -36,21 +38,21 @@ class RandomPong {
     // Fill the background each frame so we have animation
     background(backgroundColor);
 // THE FRAME RATE FOR THE RANDOM SHAPES
-    if (frameCount % 700 > 600 ) {
+    if (frameCount % 700 > 700 ) {
       ball.SIZE = 75;
       ball.shape = "rect";
       leftPaddle.HEIGHT = 15;
       rightPaddle.WIDTH = 27;
       backgroundColor = color(173, 216, 230); //light blue 
     }
-    else if (frameCount % 700 > 500) {
+    else if (frameCount % 700 > 600) {
       ball.SIZE = 27;
       ball.shape = "ellipse";
       rightPaddle.WIDTH = 35;
       leftPaddle.HEIGHT = 80;
       backgroundColor = color(240, 128, 128); // light Coral
     }
-  else if (frameCount % 700 > 400) {
+  else if (frameCount % 700 > 500) {
       ball.SIZE = 50;
       ball.shape = "triangle";
       rightPaddle.WIDTH = 50;
@@ -58,17 +60,18 @@ class RandomPong {
       backgroundColor = color(250, 250, 210); //light yellow
     }
     
-     else if (frameCount % 700 > 300) {
+     else if (frameCount % 700 > 400) {
       ball.SIZE = 50; 
+      println("IN IMAGE");
       //BallColor = color(255);
-      //ball.shape 
-      img = loadImage("norman.jpg");
+      ball.shape = "image";
+    // img = loadImage("norman.jpg");
       rightPaddle.WIDTH = 50;
       leftPaddle.HEIGHT = 100;
-      backgroundColor = color(250, 250, 210); //light yellow
+      backgroundColor = color(250, 0, 0); //light yellow
     }
     
-    else if (frameCount % 700 > 200) {
+    else if (frameCount % 700 > 300) {
       ball.SIZE = 25;
       ball.shape = "ellipse";
       rightPaddle.WIDTH = 40;
@@ -76,7 +79,7 @@ class RandomPong {
       backgroundColor = color(144, 238, 144); //light green
     }
     
- else if (frameCount % 700 > 100) {
+ else if (frameCount % 700 > 200) {
       ball.SIZE = 115;
       ball.shape = "rect";
       rightPaddle.WIDTH = 46;
@@ -84,7 +87,7 @@ class RandomPong {
       backgroundColor = color(255, 182, 193); //light pink
     }
 
- else if (frameCount % 700 > 0) {
+ else if (frameCount % 700 > 100) {
       ball.SIZE = 118;
       ball.shape = "triangle";
       rightPaddle.WIDTH = 40;
@@ -97,7 +100,7 @@ class RandomPong {
       ball.shape = "star";
       rightPaddle.WIDTH = 69;
       leftPaddle.HEIGHT = 40;
-      backgroundColor = color(  32, 178, 170); //light sea green
+      backgroundColor = color(32, 178, 170); //light sea green
     }
 
 
