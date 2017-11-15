@@ -66,9 +66,9 @@ class Paddle {
     leftKey = _leftKey;
     rightKey = _rightKey;
   }
-  
-   //ROTATE PONG
-  Paddle(int _x, int _y, char _leftKey, char _rightKey, int _w, int _h , char _upKey, char _downKey) { //Constructor
+
+  //ROTATE PONG
+  Paddle(int _x, int _y, char _leftKey, char _rightKey, int _w, int _h, char _upKey, char _downKey) { //Constructor
     x = _x;
     y = _y;
     vx = 0;
@@ -79,7 +79,7 @@ class Paddle {
 
     leftKey = _leftKey;
     rightKey = _rightKey;
-    
+
     upKey = _upKey;
     downKey = _downKey;
   }
@@ -90,7 +90,7 @@ class Paddle {
   //
   // Updates position based on velocity and constraints the paddle to the window
 
- //for basic and blue pong
+  //for basic and blue pong
   void update() {
     // Update position with velocity (to move the paddle)
     x += vx;
@@ -134,18 +134,18 @@ class Paddle {
     rectMode(CENTER);
     //rect(0,0,100,100);
     //rect(16,16,100,100);
-    
+
     theta += 0.01;
     fill(paddleColor);
-   // Draw the paddle as a rectangle
+    // Draw the paddle as a rectangle
     rect(0, 0, WIDTH, HEIGHT);
     popMatrix();
-    
-   //ALL THE TEXT INSTRUCTION FOR THE ROTATING PONG GAME 
+
+    //ALL THE TEXT INSTRUCTION FOR THE ROTATING PONG GAME 
     textSize(12);
-    text("M = menu :) ", 90,335);
-    text("2 & R = right of left",90, 353);
-    text("3 & E = up and down", 90,370);
+    text("M = menu :) ", 90, 335);
+    text("2 & R = right of left", 90, 353);
+    text("3 & E = up and down", 90, 370);
   }
 
   void reset() {
@@ -179,6 +179,55 @@ class Paddle {
     else if (key == rightKey) {
       // If so we want a positive y velocity
       vx = SPEED;
+    }
+  }
+
+  void keyPressedRotatePong() {
+    // Check if the key is our up key
+    if (key == CODED) {
+      if (keyCode == UP) {
+        println("UP");
+        vy = -SPEED;
+      }
+      
+      if (keyCode == DOWN) {
+       
+        vy = SPEED;
+      }
+      
+        if (keyCode == LEFT) {
+       
+        vx = -SPEED;
+      }
+        if (keyCode == RIGHT) {
+       
+        vx = SPEED;
+      }
+    }
+   
+  }
+  
+  void keyReleasedRotatePong() {
+    // Check if the key is our up key and the paddle is moving up
+    if(key ==CODED)
+    {
+    if (key == UP && vy < 0) {
+      // If so it should stop
+      vy = 0;
+    } // Otherwise check if the key is our down key and paddle is moving down 
+    else if (key == DOWN && vy > 0) {
+      // If so it should stop
+      vy = 0;
+    }
+
+    if (key == LEFT && vx < 0) {
+      // If so it should stop
+      vx = 0;
+    } // Otherwise check if the key is our down key and paddle is moving down 
+    else if (key == RIGHT && vx > 0) {
+      // If so it should stop
+      vx = 0;
+    }
     }
   }
 

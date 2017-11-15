@@ -14,6 +14,11 @@ class RotatingPong {
 
   // A boolean to track whether we should return to the menu
   boolean returnToMenu = false;
+  
+  long startTimer;
+  long timePassed; 
+  long stopGame = 10000;
+  boolean gameOverRotatePong =false;
 
   RotatingPong() {
     // Create 2 PADDLES IN THE MIDDLE OF THE SCREEN
@@ -22,9 +27,20 @@ class RotatingPong {
 
     // Create the ball at the centre of the screen
     ball = new Ball(width/2, height/2, 2, 0);
+    startTimer =millis();
   }
 
   void update() {
+    
+     // update amount of time Passed::
+     
+     timePassed = millis() - startTimer;
+     if(timePassed > stopGame )
+     {
+       println("gameOver");
+       gameOverRotatePong =true;
+     }
+     
     // Fill the background each frame so we have animation
     background(backgroundColor);
 
@@ -35,7 +51,14 @@ class RotatingPong {
     //display the table
 
     // Check if the ball has collided with either paddle
-    ball.collide(horizontalPaddle);
+    boolean wasHit  = ball.collideRotate(horizontalPaddle);
+   // println(wasHit);
+    if(wasHit == true)
+    {
+      // reset timer
+      startTimer = millis();
+      timePassed =0;
+    }
 
     // Check if the ball has gone off the screen
     if (ball.isOffScreen()) {
@@ -54,11 +77,22 @@ class RotatingPong {
     horizontalPaddle.reset();
     returnToMenu = false;
   }
+  
+  //EVERYTHING YOU WANT ON THE GAME OVER SCREEN
+  void displayGameOverScreen()
+  {
+      
+  textSize(20);
+  text("TIME", 244,360); 
+  textSize(35);
+  text(leaderBoard.m+":"+leaderBoard.s, 395,360);
+  text("YOU SUCK AT THIS GAME", 300, 300);
+  }
 
 
   void keyPressed() {
     // Just call both paddles' own keyPressed methods
-    horizontalPaddle.keyPressed();
+    horizontalPaddle.keyPressedRotatePong();
 
 
     // Check if we should return to the menu
@@ -73,6 +107,6 @@ class RotatingPong {
 
   void keyReleased() {
     // Call both paddles' keyReleased methods
-    horizontalPaddle.keyReleased();
+    horizontalPaddle.keyReleasedRotatePong();
   }
 }

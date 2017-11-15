@@ -127,12 +127,22 @@ void draw() {
 
     //CASE FOR THE ROTATING PONG
   case ROTATING_PONG:
-    rotatingPong.update();
-    if (rotatingPong.returnToMenu) {
-      state = State.MENU;
-      rotatingPong.returnToMenu = false;
-      rotatingPong.reset();
+    if (rotatingPong.gameOverRotatePong ==false)
+    {
+      println("test");
+      rotatingPong.update();
     }
+    else
+      {
+        background(0);
+        rotatingPong.displayGameOverScreen();
+        
+      }
+      if (rotatingPong.returnToMenu) {
+        state = State.MENU;
+        rotatingPong.returnToMenu = false;
+        rotatingPong.reset();
+      } 
     break;
 
     //CASE FOR THE RANDOM PONG
@@ -143,7 +153,7 @@ void draw() {
       randomPong.returnToMenu = false;
       randomPong.reset();
       //function to check score
-    //checkScore();
+      //checkScore();
     }
     break;
   }

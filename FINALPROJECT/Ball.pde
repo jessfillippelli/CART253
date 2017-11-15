@@ -12,7 +12,7 @@ class Ball {
   int SIZE = 16;
   Ball ball;
   Ball[] Balls= new Ball[9]; // added this for the array
-PImage img;
+ PImage img = loadImage("normann.jpg");
   String shape = "rect";
 
   // The location of the ball
@@ -53,6 +53,7 @@ PImage img;
     vy = SPEED;
     pongId = _pongId;
     ballId = _ballId;
+   img = loadImage("norman.jpg");
   }
 
   //BALL FOR 10 PONG
@@ -74,6 +75,7 @@ PImage img;
         ballColor = color(0);
       }
     }
+  img = loadImage("norman.jpg");
   }
 
   /////////////// Methods ///////////////
@@ -155,6 +157,39 @@ PImage img;
 
     // if the ball id is 0 then we change the score othrwise do nothing
   }
+  
+    boolean collideRotate(Paddle paddle) {
+    // Calculate possible overlaps with the paddle side by side
+    boolean insideLeft = (x + SIZE/2 > paddle.x - paddle.WIDTH/2);
+    boolean insideRight = (x - SIZE/2 < paddle.x + paddle.WIDTH/2);
+    boolean insideTop = (y + SIZE/2 > paddle.y - paddle.HEIGHT/2);
+    boolean insideBottom = (y - SIZE/2 < paddle.y + paddle.HEIGHT/2);
+
+    // Check if the ball overlaps with the paddle
+    if (insideLeft && insideRight && insideTop && insideBottom) {
+      // If it was moving to the left
+      if (vx < 0) {
+        // Reset its position to align with the right side of the paddle
+        x = paddle.x + paddle.WIDTH/2 + SIZE/2;
+      } else if (vx > 0) {
+        // Reset its position to align with the left side of the paddle
+        x = paddle.x - paddle.WIDTH/2 - SIZE/2;
+      }
+      // And make it bounce
+      vx = -vx;
+
+
+
+      if (ballId ==0)
+      {
+        println("rotate ball hit");
+        paddle.score++; // for the 10 ball pong
+        return true;
+      }
+    }
+    return false;
+    // if the ball id is 0 then we change the score othrwise do nothing
+  }
 
   // display()
   //
@@ -178,24 +213,27 @@ PImage img;
     } else if (shape.equals("star")) {
       star(0, 0, 30, 70, 5);
     } else if (shape.equals("image")){
-      image(img, 0, 0);
+      image(img, x, y);
     }
 //DARW THE SHAPES FOR THE RANDOM PONG  
 }
 
-  void star(float x, float y, float radius1, float radius2, int npoints) {
+  void star(float _x, float _y, float radius1, float radius2, int npoints) {
     float angle = TWO_PI / npoints;
     float halfAngle = angle/2.0;
+    pushMatrix();
+    translate(x,y);
     beginShape();
     for (float a = 0; a < TWO_PI; a += angle) {
-      float sx = x + cos(a) * radius2;
-      float sy = y + sin(a) * radius2;
+      float sx = _x + cos(a) * radius2;
+      float sy = _y + sin(a) * radius2;
       vertex(sx, sy);
-      sx = x + cos(a+halfAngle) * radius1;
-      sy = y + sin(a+halfAngle) * radius1;
+      sx = _x + cos(a+halfAngle) * radius1;
+      sy = _y + sin(a+halfAngle) * radius1;
       vertex(sx, sy);
     }
     endShape(CLOSE);
+    popMatrix();
   }
 
   //THE 10 PONG BALL 
