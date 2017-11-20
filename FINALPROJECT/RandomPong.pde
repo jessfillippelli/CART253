@@ -42,7 +42,7 @@ class RandomPong {
     if (frameCount % 800 > 800 ) {
       ball.SIZE = 75;
       ball.ballColor = color(230,187,173);
-      paddleColor = color(
+      //fill(paddleColor) = (230,173,216);
       ball.shape = "rect";
       leftPaddle.HEIGHT = 15;
       rightPaddle.WIDTH = 27;
@@ -50,6 +50,7 @@ class RandomPong {
     }
     else if (frameCount % 800 > 700) {
       ball.SIZE = 27;
+      ball.ballColor = color(128,240,240);
       ball.shape = "ellipse";
       rightPaddle.WIDTH = 35;
       leftPaddle.HEIGHT = 80;
@@ -57,6 +58,7 @@ class RandomPong {
     }
   else if (frameCount % 800 > 600) {
       ball.SIZE = 50;
+      ball.ballColor = color(210,210,250);
       ball.shape = "triangle";
       rightPaddle.WIDTH = 50;
       leftPaddle.HEIGHT = 100;
@@ -75,6 +77,7 @@ class RandomPong {
     
     else if (frameCount % 800 > 400) {
       ball.SIZE = 25;
+      ball.ballColor = color(238,144,238);
       ball.shape = "ellipse";
       rightPaddle.WIDTH = 40;
       leftPaddle.HEIGHT = 200;
@@ -83,6 +86,7 @@ class RandomPong {
     
  else if (frameCount % 800 > 300) {
       ball.SIZE = 115;
+      //ball.ballColor = color(255,182,193);
       ball.shape = "rect";
       rightPaddle.WIDTH = 46;
       leftPaddle.HEIGHT = 99;
@@ -91,6 +95,7 @@ class RandomPong {
 
  else if (frameCount % 800 > 200) {
       ball.SIZE = 118;
+      ball.ballColor = color(122,217,255);
       ball.shape = "triangle";
       rightPaddle.WIDTH = 40;
       leftPaddle.HEIGHT = 100;
@@ -99,6 +104,7 @@ class RandomPong {
 
  else if (frameCount % 800 > 100) {
       ball.SIZE = 60;
+      ball.ballColor = color(179,32,40);
       ball.shape = "star";
       ball.ballColor = color(230,187,173);
       rightPaddle.WIDTH = 69;
