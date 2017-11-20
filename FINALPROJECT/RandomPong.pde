@@ -41,7 +41,8 @@ class RandomPong {
 // THE FRAME RATE FOR THE RANDOM SHAPES
     if (frameCount % 800 > 800 ) {
       ball.SIZE = 75;
-      //ball.color = (230,187,173);
+      ball.ballColor = color(230,187,173);
+      paddleColor = color(
       ball.shape = "rect";
       leftPaddle.HEIGHT = 15;
       rightPaddle.WIDTH = 27;
@@ -62,13 +63,14 @@ class RandomPong {
       backgroundColor = color(250, 250, 210); //light yellow
     }
     
-     else if (frameCount % frameCount % 800 > 500) {
+     else if (frameCount % 800 > 500) {
       ball.SIZE = 100; 
      // println("IN IMAGE");
       ball.shape = "image";
       rightPaddle.WIDTH = 50;
       leftPaddle.HEIGHT = 100;
-      backgroundColor = color(250, 0, 0); //red
+      backgroundColor = color(250, 0, 0);  //red
+      //text("Dryal Dixon ain't nobody's bitch.");
     }
     
     else if (frameCount % 800 > 400) {
@@ -92,18 +94,20 @@ class RandomPong {
       ball.shape = "triangle";
       rightPaddle.WIDTH = 40;
       leftPaddle.HEIGHT = 100;
-      backgroundColor = color( 255, 160, 122); //light orange
+      backgroundColor = color(255, 160, 122); //light orange
     }
 
  else if (frameCount % 800 > 100) {
       ball.SIZE = 60;
       ball.shape = "star";
+      ball.ballColor = color(230,187,173);
       rightPaddle.WIDTH = 69;
       leftPaddle.HEIGHT = 40;
       backgroundColor = color(32, 178, 170); //light sea green
     }
     
      else if (frameCount % 800 > 0) {
+       println("image2");
       ball.SIZE = 60;
       ball.shape = "image2";
       rightPaddle.WIDTH = 69;

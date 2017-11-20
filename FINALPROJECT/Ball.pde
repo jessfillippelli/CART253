@@ -12,8 +12,8 @@ class Ball {
   int SIZE = 16;
   Ball ball;
   Ball[] Balls= new Ball[9]; // added this for the array
- PImage img;
- PImage img2;
+  PImage img;
+  PImage img2;
   String shape = "rect";
 
   // The location of the ball
@@ -54,10 +54,9 @@ class Ball {
     vy = SPEED;
     pongId = _pongId;
     ballId = _ballId;
-   img = loadImage("norman.png");
-   img.resize(100,100);
-   img2 = loadImage("usa.png");
-   
+    img = loadImage("norman.png");
+    img.resize(100, 100);
+    img2 = loadImage("usa.png");
   }
 
   //BALL FOR 10 PONG
@@ -79,9 +78,9 @@ class Ball {
         ballColor = color(0);
       }
     }
-  img = loadImage("norman.png");
-  img.resize(100,100);
-  img2 = loadImage("usa.png");
+    img = loadImage("norman.png");
+    img.resize(100, 100);
+    img2 = loadImage("usa.png");
   }
 
   /////////////// Methods ///////////////
@@ -163,8 +162,8 @@ class Ball {
 
     // if the ball id is 0 then we change the score othrwise do nothing
   }
-  
-    boolean collideRotate(Paddle paddle) {
+
+  boolean collideRotate(Paddle paddle) {
     // Calculate possible overlaps with the paddle side by side
     boolean insideLeft = (x + SIZE/2 > paddle.x - paddle.WIDTH/2);
     boolean insideRight = (x - SIZE/2 < paddle.x + paddle.WIDTH/2);
@@ -207,7 +206,7 @@ class Ball {
     noStroke();
     fill(ballColor);
     rectMode(CENTER);
-
+//shape="image2";
     // THIS IS FOR TEH RAdo
     if (shape.equals("rect")) {
       rect(x, y, SIZE, SIZE);
@@ -218,22 +217,22 @@ class Ball {
       triangle(x, y-SIZE, x+SIZE/2, y, x-SIZE/2, y);
     } else if (shape.equals("star")) {
       star(0, 0, 30, 70, 5);
-    } else if (shape.equals("image")){
+    } else if (shape.equals("image")) {
       imageMode(CENTER);
       image(img, x, y);
-       imageMode(CORNER);
-       } else if (shape.equals("image2")){
-      image(img2,x,y);
-     }
-    
-//DARW THE SHAPES FOR THE RANDOM PONG  
-}
+      imageMode(CORNER);
+    } else if (shape.equals("image2")) {
+      image(img2, x, y);
+    }
+
+    //DARW THE SHAPES FOR THE RANDOM PONG
+  }
 
   void star(float _x, float _y, float radius1, float radius2, int npoints) {
     float angle = TWO_PI / npoints;
     float halfAngle = angle/2.0;
     pushMatrix();
-    translate(x,y);
+    translate(x, y);
     beginShape();
     for (float a = 0; a < TWO_PI; a += angle) {
       float sx = _x + cos(a) * radius2;
