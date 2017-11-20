@@ -132,8 +132,7 @@ class Paddle {
     translate(x, y);
     rotate(theta);
     rectMode(CENTER);
-    //rect(0,0,100,100);
-    //rect(16,16,100,100);
+    
 
     theta += 0.01;
     fill(paddleColor);
@@ -143,9 +142,9 @@ class Paddle {
 
     //ALL THE TEXT INSTRUCTION FOR THE ROTATING PONG GAME 
     textSize(12);
-    text("M = menu :) ", 90, 335);
-    text("2 & R = right of left", 90, 353);
-    text("3 & E = up and down", 90, 370);
+    text("M = menu :) ", 95, 335);
+    text("Arrow keys", 90, 353);
+    text("makes you move", 90, 370);
   }
 
   void reset() {
