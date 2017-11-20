@@ -56,6 +56,7 @@ class Ball {
     ballId = _ballId;
    img = loadImage("norman.png");
    img.resize(100,100);
+   img2 = loadImage("usa.png");
    
   }
 
@@ -80,6 +81,7 @@ class Ball {
     }
   img = loadImage("norman.png");
   img.resize(100,100);
+  img2 = loadImage("usa.png");
   }
 
   /////////////// Methods ///////////////
@@ -220,10 +222,9 @@ class Ball {
       imageMode(CENTER);
       image(img, x, y);
        imageMode(CORNER);
-      
-    } //else if (shape.equals("image2")){
-      //image(img,x,y);
-    //}
+       } else if (shape.equals("image2")){
+      image(img2,x,y);
+     }
     
 //DARW THE SHAPES FOR THE RANDOM PONG  
 }

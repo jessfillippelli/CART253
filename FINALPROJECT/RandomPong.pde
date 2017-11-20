@@ -62,7 +62,7 @@ class RandomPong {
       backgroundColor = color(250, 250, 210); //light yellow
     }
     
-     else if (frameCount % frameCount % 800 > 500); {
+     else if (frameCount % frameCount % 800 > 500) {
       ball.SIZE = 100; 
      // println("IN IMAGE");
       ball.shape = "image";
@@ -105,7 +105,7 @@ class RandomPong {
     
      else if (frameCount % 800 > 0) {
       ball.SIZE = 60;
-      ball.shape = "image";
+      ball.shape = "image2";
       rightPaddle.WIDTH = 69;
       leftPaddle.HEIGHT = 40;
       backgroundColor = color(32, 178, 170); //light sea green
