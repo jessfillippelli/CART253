@@ -12,7 +12,8 @@ class Ball {
   int SIZE = 16;
   Ball ball;
   Ball[] Balls= new Ball[9]; // added this for the array
- PImage img = loadImage("normann.jpg");
+ PImage img;
+ PImage img2;
   String shape = "rect";
 
   // The location of the ball
@@ -53,7 +54,9 @@ class Ball {
     vy = SPEED;
     pongId = _pongId;
     ballId = _ballId;
-   img = loadImage("norman.jpg");
+   img = loadImage("norman.png");
+   img.resize(100,100);
+   
   }
 
   //BALL FOR 10 PONG
@@ -75,7 +78,8 @@ class Ball {
         ballColor = color(0);
       }
     }
-  img = loadImage("norman.jpg");
+  img = loadImage("norman.png");
+  img.resize(100,100);
   }
 
   /////////////// Methods ///////////////
@@ -213,8 +217,14 @@ class Ball {
     } else if (shape.equals("star")) {
       star(0, 0, 30, 70, 5);
     } else if (shape.equals("image")){
+      imageMode(CENTER);
       image(img, x, y);
-    }
+       imageMode(CORNER);
+      
+    } //else if (shape.equals("image2")){
+      //image(img,x,y);
+    //}
+    
 //DARW THE SHAPES FOR THE RANDOM PONG  
 }
 
