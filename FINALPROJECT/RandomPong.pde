@@ -7,7 +7,8 @@ class RandomPong {
 
   // The distance from the edge of the window a paddle should be
   int PADDLE_INSET = 8;
-
+  int numberOfPointsToWin = 1;
+  
   // The background colour during play (black)
   color backgroundColor = color(255, 179, 71);
  
@@ -146,6 +147,34 @@ class RandomPong {
     ball.display();
   }
 
+ //ELEMENT FOR THE SCORE (TEN PONG)
+    //textSize(32);
+    //fill(0); 
+    //text(middlePaddle.score, middlePaddle.x, middlePaddle.y );
+
+
+    //this is after you win
+    if (leftPaddle.score &&  rightPaddle.score >= numberOfPointsToWin) {
+      background(255, 182, 193);
+      img = loadImage("game_over.jpg");
+      image(img, 154,20,width/2, height/2);
+      textSize(27);
+      fill(255);
+      text("Congrats you won!!", width/2, 300);
+    }
+    
+    displayInstructions();
+  }
+  
+  //TEXT FOR THE 10 PONG
+  void displayInstructions() {   
+    textSize(20);
+    fill(255);
+    text("M = menu! :) ", width/2, 3*height/4);
+    text("q and p to play",width/2, 388);
+    fill(255);
+    
+  }
 
 
   // reset()

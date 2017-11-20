@@ -27,8 +27,8 @@ class TenPong {
 
     tenBalls = new Ball [10];
     for (int i = 0; i < tenBalls.length; i++) {
-       int xspeed = (int)random(-10,10);
-       int yspeed = (int)random(5,8);
+      int xspeed = (int)random(-10, 10);
+      int yspeed = (int)random(5, 8);
       // variable 1 =x
       // variable 2 =y pos
       // variable 3 is xspeed
@@ -83,23 +83,22 @@ class TenPong {
     if (middlePaddle.score >= numberOfPointsToWin) {
       background(255, 182, 193);
       img = loadImage("game_over.jpg");
-      image(img, 154,20,width/2, height/2);
+      image(img, 154, 20, width/2, height/2);
       textSize(27);
       fill(255);
       text("Congrats you won!!", width/2, 300);
     }
-    
+
     displayInstructions();
   }
-  
+
   //TEXT FOR THE 10 PONG
   void displayInstructions() {   
     textSize(20);
     fill(255);
     text("M = menu! :) ", width/2, 3*height/4);
-    text("q and p to play",width/2, 388);
+    text("q and p to play", width/2, 388);
     fill(255);
-    
   }
 
 
@@ -129,7 +128,5 @@ class TenPong {
     middlePaddle.reset();
     middlePaddle.y = height - tenHeight;
     returnToMenu = false;
-    
-  
   }
 }
