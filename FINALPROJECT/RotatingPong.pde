@@ -7,6 +7,7 @@ class RotatingPong {
 
   // The distance from the edge of the window a paddle should be
   int  horizontalHeight = 16;
+  PImage img;
   
   // The background colour during play 
   color backgroundColor = color(147, 112, 219);
@@ -82,12 +83,19 @@ class RotatingPong {
   void displayGameOverScreen()
   {
       
-  textSize(20);
+  textSize(35);
   text("TIME", 244,360); 
   textSize(35);
+  img = loadImage("gameover.png");
+  image(img, 154,20, 350, 400);
   text(leaderBoard.m+":"+leaderBoard.s, 395,360);
-  text("YOU SUCK AT THIS GAME", 300, 300);
+  text("YOU SUCK AT THIS GAME", 333, 300);
+ ;
+  
   }
+  
+  
+
 
 
   void keyPressed() {
