@@ -166,7 +166,7 @@ class RandomPong {
     displayInstructions();
   }
   
-  //TEXT FOR THE 10 PONG
+  //TEXT FOR random PONG
   void displayInstructions() {   
     textSize(20);
     fill(255);
