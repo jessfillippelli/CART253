@@ -90,7 +90,7 @@ class RotatingPong {
   image(img, 154,20, 350, 400);
   text(leaderBoard.m+":"+leaderBoard.s, 395,360);
   text("YOU SUCK AT THIS GAME", 333, 300);
- ;
+ 
   
   }
   
