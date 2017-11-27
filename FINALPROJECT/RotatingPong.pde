@@ -12,7 +12,7 @@ class RotatingPong {
   // The background colour during play 
   color backgroundColor = color(147, 112, 219);
 
-
+f
   // A boolean to track whether we should return to the menu
   boolean returnToMenu = false;
   
@@ -76,7 +76,11 @@ class RotatingPong {
   void reset() {
     ball.reset();
     horizontalPaddle.reset();
+    gameOverRotatePong = false;
+    startTimer = millis();
     returnToMenu = false;
+    leaderBoard.s=0;
+    leaderBoard.m=0;
   }
   
   //EVERYTHING YOU WANT ON THE GAME OVER SCREEN

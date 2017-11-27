@@ -55,6 +55,7 @@ class Menu {
     }
      else if (key == 'r'|| key == 'R') {
       selection= State.ROTATING_PONG;
+      rotatingPong.reset();
     }
  else if (key == 'a'|| key == 'A') {
       selection= State.RANDOM_PONG;
