@@ -60,7 +60,7 @@ class RandomPong {
       ball.shape = "triangle";
       rightPaddle.WIDTH = 50;
       leftPaddle.HEIGHT = 100;
-      backgroundColor = color(250, 250, 210); //light yellow
+      backgroundColor = color(144, 238, 144); //light green
     } else if (frameCount % 800 > 500) {
       ball.SIZE = 100; 
       // println("IN IMAGE");
@@ -133,10 +133,11 @@ class RandomPong {
 
 
   //ELEMENT FOR THE SCORE (RANDOM PONG)
-  textSize(32);
+  textSize(250);
   fill(0); 
-  text(leftPaddle.score , 100, 100 );
-  text(rightPaddle.score, width/2, height/2);
+  text(leftPaddle.score ,150 , 200 );
+  textSize(250);
+  text(rightPaddle.score, 515 , 200);
 
 
   //this is after you win
@@ -158,7 +159,7 @@ class RandomPong {
   fill(255);
   text("M = menu! :) ", width/2, 3*height/4);
   text("q and p to play", width/2, 388);
-  fill(255);
+  fill(0);
 }
 
 
