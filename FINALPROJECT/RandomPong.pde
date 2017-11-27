@@ -147,34 +147,34 @@ class RandomPong {
     ball.display();
   }
 
- //ELEMENT FOR THE SCORE (TEN PONG)
-    //textSize(32);
-    //fill(0); 
-    //text(middlePaddle.score, middlePaddle.x, middlePaddle.y );
+ ////ELEMENT FOR THE SCORE (TEN PONG)
+ //   //textSize(32);
+ //   //fill(0); 
+ //   //text(middlePaddle.score, middlePaddle.x, middlePaddle.y );
 
 
-    //this is after you win
-    if (leftPaddle.score &&  rightPaddle.score >= numberOfPointsToWin) {
-      background(255, 182, 193);
-      img = loadImage("game_over.jpg");
-      image(img, 154,20,width/2, height/2);
-      textSize(27);
-      fill(255);
-      text("Congrats you won!!", width/2, 300);
-    }
+ //   //this is after you win
+ //   if (leftPaddle.score &&  rightPaddle.score >= numberOfPointsToWin) {
+ //     background(255, 182, 193);
+ //     img = loadImage("game_over.jpg");
+ //     image(img, 154,20,width/2, height/2);
+ //     textSize(27);
+ //     fill(255);
+ //     text("Congrats you won!!", width/2, 300);
+ //   }
     
-    displayInstructions();
-  }
+ //   displayInstructions();
+ // }
   
-  //TEXT FOR random PONG
-  void displayInstructions() {   
-    textSize(20);
-    fill(255);
-    text("M = menu! :) ", width/2, 3*height/4);
-    text("q and p to play",width/2, 388);
-    fill(255);
+ // //TEXT FOR random PONG
+ // void displayInstructions() {   
+ //   textSize(20);
+ //   fill(255);
+ //   text("M = menu! :) ", width/2, 3*height/4);
+ //   text("q and p to play",width/2, 388);
+ //   fill(255);
     
-  }
+ // }
 
 
   // reset()
