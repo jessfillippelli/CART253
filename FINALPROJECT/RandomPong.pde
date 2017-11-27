@@ -7,7 +7,7 @@ class RandomPong {
 
   // The distance from the edge of the window a paddle should be
   int PADDLE_INSET = 8;
-  int numberOfPointsToWin = 1;
+  int numberOfPointsToWin = 10;
 
   // The background colour during play (black)
   color backgroundColor = color(255, 179, 71);
@@ -71,10 +71,9 @@ class RandomPong {
         backgroundColor = color(255, 0, 255); //light green
       } else if (frameCount % 800 > 500) {
         ball.SIZE = 100; 
-        // println("IN IMAGE");
         ball.shape = "image";
-        rightPaddle.WIDTH = 50;
-        leftPaddle.HEIGHT = 100;
+        rightPaddle.WIDTH = 20;
+        leftPaddle.HEIGHT = 199;
         rightPaddle.paddleColor = color(0, 255, 128);
         leftPaddle.paddleColor = color(0, 255, 128);
         backgroundColor = color(250, 0, 0);  //red
@@ -86,7 +85,7 @@ class RandomPong {
         rightPaddle.paddleColor = color(238, 144, 144);
         leftPaddle.paddleColor = color(238, 144, 144);
         rightPaddle.WIDTH = 40;
-        leftPaddle.HEIGHT = 200;
+        leftPaddle.HEIGHT = 400;
         backgroundColor = color(144, 238, 144); //light green
       } else if (frameCount % 800 > 300) {
         ball.SIZE = 115;
@@ -95,7 +94,7 @@ class RandomPong {
         leftPaddle.paddleColor = color(244, 182, 255);
         ball.shape = "rect";
         rightPaddle.WIDTH = 46;
-        leftPaddle.HEIGHT = 99;
+        leftPaddle.HEIGHT = 300;
         backgroundColor = color(255, 116, 140); //light pink
       } else if (frameCount % 800 > 200) {
         ball.SIZE = 118;
@@ -103,15 +102,15 @@ class RandomPong {
         rightPaddle.paddleColor = color(160, 122, 255);
         leftPaddle.paddleColor = color(160, 122, 255);
         ball.shape = "triangle";
-        rightPaddle.WIDTH = 40;
-        leftPaddle.HEIGHT = 100;
+        rightPaddle.WIDTH = 300;
+        leftPaddle.HEIGHT = 20;
         backgroundColor = color(255, 160, 122); //light orange
       } else if (frameCount % 800 > 100) {
         ball.SIZE = 60;
         ball.ballColor = color(179, 32, 40);
         ball.shape = "star";
         rightPaddle.WIDTH = 69;
-        leftPaddle.HEIGHT = 40;
+        leftPaddle.HEIGHT = 150;
         rightPaddle.paddleColor = color(179, 32, 113);
         leftPaddle.paddleColor = color(179, 32, 113);
         backgroundColor = color(32, 178, 170); //light sea green
@@ -119,7 +118,7 @@ class RandomPong {
         println("image2");
         ball.SIZE = 60;
         ball.shape = "image2";
-        rightPaddle.WIDTH = 69;
+        rightPaddle.WIDTH = 90;
         leftPaddle.HEIGHT = 40;
         backgroundColor = color(32, 178, 170); //light sea green
       }
