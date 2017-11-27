@@ -16,7 +16,7 @@ class TenPong {
 
   // A boolean to track whether we should return to the menu
   boolean returnToMenu = false;
-  int numberOfPointsToWin = 1;
+  int numberOfPointsToWin = 10;
 
 
 
