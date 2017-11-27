@@ -158,7 +158,8 @@ class RandomPong {
   textSize(20);
   fill(255);
   text("M = menu! :) ", width/2, 3*height/4);
-  text("q and p to play", width/2, 388);
+  text("1 and q = Left Paddle", width/2, 388);
+  text("0 and p = Right Paddle", width/2, 415);
   fill(0);
 }
 
