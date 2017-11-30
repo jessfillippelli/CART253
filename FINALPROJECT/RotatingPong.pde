@@ -75,7 +75,7 @@ class RotatingPong {
 
   void reset() {
     ball.reset();
-    horizontalPaddle.reset();
+    horizontalPaddle.resetHorizontalPaddle(horizontalHeight);
     gameOverRotatePong = false;
     startTimer = millis();
     returnToMenu = false;
@@ -119,6 +119,7 @@ class RotatingPong {
 
   void keyReleased() {
     // Call both paddles' keyReleased methods
+    println("KEY RELEASED");
     horizontalPaddle.keyReleasedRotatePong();
   }
 }

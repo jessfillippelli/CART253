@@ -203,6 +203,7 @@ class RandomPong {
     leftPaddle.reset();
     rightPaddle.reset();
     returnToMenu = false;
+    gameOver =false;
   }
 
   // keyPressed()

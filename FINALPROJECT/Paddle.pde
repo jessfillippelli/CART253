@@ -104,6 +104,7 @@ class Paddle {
   void updatehorizontal() {
     // Update position with velocity (to move the paddle)
     x += vx;
+
     y += vy;
 
     // Constrain the paddle's y position to be in the window 
@@ -132,7 +133,7 @@ class Paddle {
     translate(x, y);
     rotate(theta);
     rectMode(CENTER);
-    
+
 
     theta += 0.01;
     fill(paddleColor);
@@ -152,6 +153,21 @@ class Paddle {
     vy = 0;
     y = height/2;
     score = 0;
+  }
+
+  void resetHorizontalPaddle(int horizontalHeight) {
+    x=width/2;
+    y=height - horizontalHeight;
+    vx = 0;
+    vy = 0;
+  }
+  
+   void resetMiddlePaddle(int tenHeight) {
+   x =width/2;
+   y=height - tenHeight;
+    vx = 0;
+    vy = 0;
+    score =0;
   }
 
   // keyPressed()
@@ -188,45 +204,49 @@ class Paddle {
         println("UP");
         vy = -SPEED;
       }
-      
+
       if (keyCode == DOWN) {
-       
+
         vy = SPEED;
       }
-      
-        if (keyCode == LEFT) {
-       
+
+      if (keyCode == LEFT) {
+
         vx = -SPEED;
       }
-        if (keyCode == RIGHT) {
-       
+      if (keyCode == RIGHT) {
+
         vx = SPEED;
       }
     }
-   
   }
-  
-  void keyReleasedRotatePong() {
-    // Check if the key is our up key and the paddle is moving up
-    if(key ==CODED)
-    {
-    if (key == UP && vy < 0) {
-      // If so it should stop
-      vy = 0;
-    } // Otherwise check if the key is our down key and paddle is moving down 
-    else if (key == DOWN && vy > 0) {
-      // If so it should stop
-      vy = 0;
-    }
 
-    if (key == LEFT && vx < 0) {
-      // If so it should stop
-      vx = 0;
-    } // Otherwise check if the key is our down key and paddle is moving down 
-    else if (key == RIGHT && vx > 0) {
-      // If so it should stop
-      vx = 0;
-    }
+  void keyReleasedRotatePong() {
+
+    // Check if the key is our up key and the paddle is moving up
+
+    if (key ==CODED)
+    {
+      if (keyCode == UP && vy < 0) {
+        // If so it should stop
+        vy = 0;
+      } // Otherwise check if the key is our down key and paddle is moving down 
+      else if (keyCode == DOWN && vy > 0) {
+        // If so it should stop
+        vy = 0;
+      }
+
+      if (keyCode == LEFT && vx < 0) {
+        // If so it should stop
+        vx = 0;
+      } 
+      // Otherwise check if the key is our down key and paddle is moving down 
+
+      else if (keyCode == RIGHT && vx > 0) {
+        // If so it should stop
+
+        vx = 0;
+      }
     }
   }
 

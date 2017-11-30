@@ -129,7 +129,7 @@ void draw() {
   case ROTATING_PONG:
     if (rotatingPong.gameOverRotatePong ==false)
     {
-      println("test");
+     // println("test");
       rotatingPong.update();
     }
     else

@@ -125,8 +125,8 @@ class TenPong {
     for (int i = 0; i < tenBalls.length; i++) {
       tenBalls[i].reset();
     }
-    middlePaddle.reset();
-    middlePaddle.y = height - tenHeight;
+    middlePaddle.resetMiddlePaddle(tenHeight);
+    //middlePaddle.y = height - tenHeight;
     returnToMenu = false;
   }
 }
