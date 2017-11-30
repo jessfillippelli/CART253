@@ -204,7 +204,7 @@ class Paddle {
     // Check if the key is our up key
     if (key == CODED) {
       if (keyCode == UP) {
-        println("UP");
+        //println("UP");
         vy = -SPEED;
       }
 

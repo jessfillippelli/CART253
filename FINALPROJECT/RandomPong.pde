@@ -115,7 +115,7 @@ class RandomPong {
         leftPaddle.paddleColor = color(179, 32, 113);
         backgroundColor = color(32, 178, 170); //light sea green
       } else if (frameCount % 800 > 0) {
-        println("image2");
+        //println("image2");
         ball.SIZE = 60;
         ball.shape = "image2";
         rightPaddle.WIDTH = 90;

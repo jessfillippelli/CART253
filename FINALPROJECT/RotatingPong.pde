@@ -119,7 +119,7 @@ class RotatingPong {
 
   void keyReleased() {
     // Call both paddles' keyReleased methods
-    println("KEY RELEASED");
+    //println("KEY RELEASED");
     horizontalPaddle.keyReleasedRotatePong();
   }
 }

@@ -187,7 +187,7 @@ class Ball {
 
       if (ballId ==0)
       {
-        println("rotate ball hit");
+        //println("rotate ball hit");
         paddle.score++; // for the 10 ball pong
         return true;
       }
