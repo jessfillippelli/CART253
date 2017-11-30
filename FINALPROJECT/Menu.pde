@@ -27,8 +27,8 @@ class Menu {
   // The display method displays the options available in the game
   
   void display() {
-    background(0);
-    fill(255);
+    background(230,230,50,127);
+    fill(0);
     textAlign(CENTER, CENTER);
     textSize(32);
     text("(P)ONG", width/2, 50);

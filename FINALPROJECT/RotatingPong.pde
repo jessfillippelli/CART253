@@ -68,7 +68,7 @@ class RotatingPong {
     }
 
     // Display the paddles and the ball
-    horizontalPaddle.displayRotatingPong();
+    horizontalPaddle.displayRotatingPong(); 
     ball.displayRotatingPong();
     leaderBoard.display();
   }
@@ -94,7 +94,8 @@ class RotatingPong {
   image(img, 154,20, 350, 400);
   text(leaderBoard.m+":"+leaderBoard.s, 395,360);
   text("YOU SUCK AT THIS GAME", 333, 300);
- 
+  textSize(25);
+  text("Press M to Return to Menu", width/2, 330); 
   
   }
   
