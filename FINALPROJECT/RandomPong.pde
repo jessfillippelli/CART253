@@ -170,12 +170,12 @@ class RandomPong {
       if (leftPaddle.score == numberOfPointsToWin) {
         textSize(32);
         fill(255, 0, 255);
-        text("LEFT RANDOM PLAYER WINS", 340,260);
+        text("LEFT RANDOM PLAYER WINS", 340, 260);
       }
       if (rightPaddle.score == numberOfPointsToWin) {
         textSize(32);
         fill( 255, 0, 255);
-        text("RIGHT RANDOM PLAYER WINS", 340,260);
+        text("RIGHT RANDOM PLAYER WINS", 340, 260);
       }
     }
 

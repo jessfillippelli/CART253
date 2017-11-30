@@ -17,7 +17,7 @@ class Menu {
   // update()
   //
   // The update method just displays the menu
-  
+
   void update() {
     display();
   }
@@ -25,7 +25,7 @@ class Menu {
   // display()
   //
   // The display method displays the options available in the game
-  
+
   void display() {
     background(255);
     fill(0);
@@ -35,7 +35,7 @@ class Menu {
     text("(B)LUE PONG", width/2, 100);
     text("(T)EN PONG", width/2, 150);
     text("(R)OTATING PONG", width/2, 200);
-    text("R(A)NDOM PONG", width/2,250);
+    text("R(A)NDOM PONG", width/2, 250);
   }
 
   // keyPressed()
@@ -43,30 +43,26 @@ class Menu {
   // Called by the main program when the menu is active. If the player
   // presses a key to select one of the game versions, this object
   // will remember the state chosen.
-  
+
   void keyPressed() {
     if (key == 'p' || key == 'P') {
       selection = State.BASIC_PONG;
     } else if (key == 'b' || key == 'B') {
       selection = State.BLUE_PONG;
-    }
-    else if (key == 't' || key == 'T') {
+    } else if (key == 't' || key == 'T') {
       selection = State.TEN_PONG;
-    }
-     else if (key == 'r'|| key == 'R') {
+    } else if (key == 'r'|| key == 'R') {
       selection= State.ROTATING_PONG;
       rotatingPong.reset();
-    }
- else if (key == 'a'|| key == 'A') {
+    } else if (key == 'a'|| key == 'A') {
       selection= State.RANDOM_PONG;
-    }  
-
-}
+    }
+  }
 
   // keyReleased()
   //
   // Does nothing.
-  
+
   void keyReleased() {
   }
 }

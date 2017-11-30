@@ -25,7 +25,7 @@ class LeaderBoard {
     {
       minuteChanged=false;
     }
- 
+
 
     fill(255, 10);
     stroke(0);

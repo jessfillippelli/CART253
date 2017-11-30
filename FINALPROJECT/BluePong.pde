@@ -17,7 +17,7 @@ class BluePong {
   int PADDLE_INSET = 250;
 
   // The background colour during play (blue!)
-  color backgroundColor = color(0,0,255);
+  color backgroundColor = color(0, 0, 255);
 
   // A boolean to track whether we should return to the menu
   boolean returnToMenu = false;
@@ -26,13 +26,13 @@ class BluePong {
   //
   // Creates the paddles and ball
 
-   BluePong() {
-     // Create a paddle on either side of the screen
+  BluePong() {
+    // Create a paddle on either side of the screen
     leftPaddle = new Paddle(PADDLE_INSET, height/2, '1', 'q');
     rightPaddle = new Paddle(width - PADDLE_INSET, height/2, '0', 'p');
 
     // Create the ball at the centre of the screen
-    ball = new Ball(width/2, height/2,1,0);
+    ball = new Ball(width/2, height/2, 1, 0);
   }
 
   // update()
@@ -64,12 +64,12 @@ class BluePong {
     rightPaddle.display();
     ball.display();
   }
-  
+
   // reset()
   //
   // Resets the game by resetting the ball and paddles and setting
   // returnToMenu to false
-  
+
   void reset() {
     ball.reset();
     leftPaddle.reset();
@@ -87,10 +87,10 @@ class BluePong {
     // Just call both paddles' own keyPressed methods
     leftPaddle.keyPressed();
     rightPaddle.keyPressed();
-    
+
     // Check if we should return to the menu
     if (key == 'm' || key == 'M') {
-     returnToMenu = true; 
+      returnToMenu = true;
     }
   }
 

@@ -29,21 +29,20 @@ class Title {
   void display() {
     background(0);
     textAlign(CENTER, CENTER);
-    
+
     textSize(64);
-    fill(153,50,204);
+    fill(153, 50, 204);
     text("Pong Extravaganza!", width/2, height/2);
-   
+
     fill(255);
     textSize(27);
     text("Wanna Play?", width/2, 300);
-   
+
     fill(255);
     textSize(27);
     text("Press any key to continue then", width/2, 335);
-   
   }
-  
+
   // keyPressed()
   //
   // Called by the main program when the title is active.
@@ -56,7 +55,7 @@ class Title {
   // keyReleased()
   //
   // Does nothing.
-  
+
   void keyReleased() {
   }
 }

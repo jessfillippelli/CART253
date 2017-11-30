@@ -31,13 +31,13 @@ class BasicPong {
   //
   // Creates the paddles and ball
 
-   BasicPong() {
-     // Create a paddle on either side of the screen
+  BasicPong() {
+    // Create a paddle on either side of the screen
     leftPaddle = new Paddle(PADDLE_INSET, height/2, '1', 'q');
     rightPaddle = new Paddle(width - PADDLE_INSET, height/2, '0', 'p');
 
     // Create the ball at the centre of the screen
-    ball = new Ball(width/2, height/2,0,0);
+    ball = new Ball(width/2, height/2, 0, 0);
   }
 
   // update()
@@ -69,12 +69,12 @@ class BasicPong {
     rightPaddle.display();
     ball.display();
   }
-  
+
   // reset()
   //
   // Resets the game by resetting the ball and paddles and setting
   // returnToMenu to false
-  
+
   void reset() {
     ball.reset();
     leftPaddle.reset();
@@ -92,10 +92,10 @@ class BasicPong {
     // Just call both paddles' own keyPressed methods
     leftPaddle.keyPressed();
     rightPaddle.keyPressed();
-    
+
     // Check if we should return to the menu
     if (key == 'm' || key == 'M') {
-     returnToMenu = true; 
+      returnToMenu = true;
     }
   }
 

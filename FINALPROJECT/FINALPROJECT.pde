@@ -129,20 +129,18 @@ void draw() {
   case ROTATING_PONG:
     if (rotatingPong.gameOverRotatePong ==false)
     {
-     // println("test");
+      // println("test");
       rotatingPong.update();
+    } else
+    {
+      background(0);
+      rotatingPong.displayGameOverScreen();
     }
-    else
-      {
-        background(0);
-        rotatingPong.displayGameOverScreen();
-        
-      }
-      if (rotatingPong.returnToMenu) {
-        state = State.MENU;
-        rotatingPong.returnToMenu = false;
-        rotatingPong.reset();
-      } 
+    if (rotatingPong.returnToMenu) {
+      state = State.MENU;
+      rotatingPong.returnToMenu = false;
+      rotatingPong.reset();
+    } 
     break;
 
     //CASE FOR THE RANDOM PONG

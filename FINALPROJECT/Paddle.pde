@@ -148,7 +148,7 @@ class Paddle {
     text("Arrow keys", 90, 353);
     text("makes you move", 90, 370);
     textSize(27);
-    text("The game that might not ever end..." , width/2, 425);
+    text("The game that might not ever end...", width/2, 425);
   }
 
   void reset() {
@@ -164,10 +164,10 @@ class Paddle {
     vx = 0;
     vy = 0;
   }
-  
-   void resetMiddlePaddle(int tenHeight) {
-   x =width/2;
-   y=height - tenHeight;
+
+  void resetMiddlePaddle(int tenHeight) {
+    x =width/2;
+    y=height - tenHeight;
     vx = 0;
     vy = 0;
     score =0;

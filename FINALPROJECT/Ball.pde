@@ -206,7 +206,7 @@ class Ball {
     noStroke();
     fill(ballColor);
     rectMode(CENTER);
-//shape="image2";
+    //shape="image2";
     // THIS IS FOR TEH RAdo
     if (shape.equals("rect")) {
       rect(x, y, SIZE, SIZE);
@@ -262,6 +262,5 @@ class Ball {
     fill(ballColor); 
     rectMode(CENTER);
     ellipse(x, y, SIZE, SIZE);
-    
   }
 }
