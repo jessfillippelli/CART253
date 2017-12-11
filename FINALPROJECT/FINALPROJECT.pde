@@ -1,14 +1,19 @@
 // Pong(s)
 // by JESSICA FILIPPELLI
 
-// Artist's Statement
-
-
-
-
-
-
-
+// ARTIST'S STATEMENT
+//What I think is interesting about the program I created is the different kind of Pong games I created. 
+//What I mean by this is that I’ve never seen these types of Pong games before and it gives the players 
+//a different feeling while playing, I guess I can say a feeling of excitement while playing a new style of Pong,
+//because playing the same type of Pong all the time would be a bit boring in my opinion.
+// The creative accept would be the way I incorporated the paddles and balls in different styles, 
+//while adding some elements I think would make the game more enjoyable. 
+//I was creative by adding everyday elements ex: leaderboard, (rotating pong). I’m hoping this leaderboard 
+//will make the players want to beat the highest ranked player. 
+//That way the player will play the game more than once. Another creative element is the way I made the paddles be random, 
+//(random pong) it makes the game more exciting. It might be boring looking at the same ball and paddles, and also the player 
+//will not know what the ball and paddles will look like, they will always be surprise, as to what they look like next. 
+//The last creative element is I made a pong game with more than one ball, it gives the game a exciting and cool look.   
 
 
 // A version of Pong that can run multiple versions of the game.
