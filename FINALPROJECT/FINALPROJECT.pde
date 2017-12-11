@@ -9,20 +9,21 @@
 //The creative accept would be the way I incorporated the paddles and balls in different styles, 
 //while adding some elements I think would make the game more enjoyable, on the eyes and how you play. 
 //I was creative by adding everyday elements ex: leaderboard, (rotating pong). I’m hoping this leaderboard 
-//will make the players want to beat the highest ranked player.That way the player will play the game more than once. 
-//Another creative element is the way I made the paddles be random,(random pong) it makes the game more exciting.
+//will make the players want to beat the highest ranked player. That way the player will play the game more than once. 
+//Another creative element is the way I made the paddles be random, (random pong) it makes the game more exciting.
 //It might be boring looking at the same ball and paddles all the time, and also the player will not know what the ball and paddles 
-//will look like, they will always be surprise, as to what they look like next. The last creative element is I made a 
-//pong game with more than one ball, it gives the game a exciting and cool look. Im hopeing with more than one ball
-//the player will have a hard time hitting the ball and want to keep playing untill they win, becuase I know I would want to play
-//until I can win and I hope the player think like that too.
+//will look like, they will always be surprise, as to what teh ball and paddles look like next. The last creative element is I made a 
+//pong game with more than one ball, it gives the game a exciting and cool look. I’m hoping with more than one ball
+//the player will have a hard time hitting the ball that gives you the pont and want to keep playing until they win, because I know I would want to play
+//until I can win and I hope the player thinks like that too.
 //interesting coding: Well everything was pretty interesting and overwhelming.
-//The interesting coding I would say is the frame rate, I was able to make the balls and paddles random with it. Even if there is a lot of code I still think
-//its pretty cool how it works. The array was also pretty interesting but confusing at first, but once i figured how to pin point one of the balls to make it
-//differnt from the rest, all was ok. The coding for the rotating pong was a little hard for me to understanding (timer and rotating paddle) 
-//and I think thats what makes it most interesting for me becasue to see how the code i did not understand comes to life.
-//lastly I made A ball ID which helps alot trying to figure out which ball goes to which game. (basic, blue and ten pong) becasue I use
+//But the most interesting code, I would say is the frame rate, I was able to make the balls and paddles random with it. Even if there is a lot of code I still think
+//it’s pretty cool how it works. The array was also pretty interesting but confusing at first, but once I figured how to pin point one of the balls to make it
+//different from the rest, all was ok. The coding for the rotating pong was a little hard for me to understanding (timer and rotating paddle) 
+//and I think that’s what makes it most interesting for me because to see how the code I did not understand comes to life.
+//lastly I made A ball ID which helps a lot trying to figure out which ball goes to which game. (basic, blue and ten pong) because I use
 // the same ball and i did not want the ball for basic and blue to change just the ten pong. 
+
 
 
 // A version of Pong that can run multiple versions of the game.
