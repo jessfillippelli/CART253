@@ -61,7 +61,7 @@ class Ball {
     img2 = loadImage("usa.png");
   }
 
-  //BALL FOR 10 PONG
+  //BALL FOR 10 PONG AND RANDOM PONG
   Ball(int _x, int _y, int _vx, int _vy, int _pongId, int _ballId) {
     pongId = _pongId;
     SPEED = _vx;
@@ -155,7 +155,7 @@ class Ball {
 
       if (ballId ==0)
       {
-        println("red ball hit");
+        //println("red ball hit");
         paddle.score++; // for the 10 ball pong score
       }
     }
