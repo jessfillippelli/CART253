@@ -1,3 +1,5 @@
+//BALL ID = 1
+
 // BluePong
 //
 // This is exactly the same as BasicPong except that it has a blue

@@ -1,3 +1,4 @@
+//BALL ID = 3
 //BALL ID 0 = BALL CAN BE HIT = YOU GET A POINT (SCORE CAN GET HIGHTER) = RED BALL
 // BALL ID = 1 = CAN NOT GET HIT = NO POINT = BLACK BALL
 //KEYS TO PLAY THE GAME "q" and "p" MAKE SURE CAP LOCK IS OFF
@@ -29,6 +30,7 @@ class TenPong {
     for (int i = 0; i < tenBalls.length; i++) {
       int xspeed = (int)random(-10, 10);
       int yspeed = (int)random(5, 8);
+      
       // variable 1 =x
       // variable 2 =y pos
       // variable 3 is xspeed

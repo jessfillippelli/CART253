@@ -15,7 +15,12 @@
 //will look like, they will always be surprise, as to what they look like next. The last creative element is I made a 
 //pong game with more than one ball, it gives the game a exciting and cool look. Im hopeing with more than one ball
 //the player will have a hard time hitting the ball and want to keep playing untill they win, becuase I know I would want to play
-//until I can win.
+//until I can win and I hope the player think like that too.
+//The interesting coding I would say is the frame rate, I was able to make the balls and paddles random with it. Even if there is a lot of code I still think
+//its pretty cool how it works. The array was also pretty interesting but confusing at first, but once i figured how to pin point one of the balls to make it
+//differnt from the rest, all was ok. The coding for the rotating pong was a little hard for me to understanding (timer and rotating paddle) 
+//and I think thats whart makes it most interesting for me becasue to see how the code i did not understand comes to life.
+//lastly I made teh ball ID which helps alot trying tto figure out wgich ball goes to which game. 
 
 
 // A version of Pong that can run multiple versions of the game.
