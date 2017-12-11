@@ -14,6 +14,8 @@ class Ball {
   Ball[] Balls= new Ball[9]; // added this for the array
   PImage img;
   PImage img2;
+  
+  //RANDON PONG
   String shape = "rect";
 
   // The location of the ball
@@ -46,7 +48,7 @@ class Ball {
   // NOTE that I'm using an underscore in front of the arguments to distinguish
   // them from the class's properties
 
-  //BALL FOR BASIC AND BLUE PONG
+  //BALL FOR BASIC AND BLUE PONG AND RANDOM PONG
   Ball(int _x, int _y, int _pongId, int _ballId) {
     x = _x;
     y = _y;
@@ -78,9 +80,7 @@ class Ball {
         ballColor = color(0);
       }
     }
-    img = loadImage("norman.png");
-    img.resize(100, 100);
-    img2 = loadImage("usa.png");
+    
   }
 
   /////////////// Methods ///////////////
@@ -156,7 +156,7 @@ class Ball {
       if (ballId ==0)
       {
         println("red ball hit");
-        paddle.score++; // for the 10 ball pong
+        paddle.score++; // for the 10 ball pong score
       }
     }
 
@@ -193,7 +193,7 @@ class Ball {
       }
     }
     return false;
-    // if the ball id is 0 then we change the score othrwise do nothing
+    // if the ball id is 0 then we change the score othrwise do nothing 10 PONG 
   }
 
   // display()
@@ -207,7 +207,7 @@ class Ball {
     fill(ballColor);
     rectMode(CENTER);
     //shape="image2";
-    // THIS IS FOR TEH RAdo
+    // THIS IS FOR RANDOM PONG FOR THE SHAPE OF TEH BALL
     if (shape.equals("rect")) {
       rect(x, y, SIZE, SIZE);
       //fill(255);

@@ -1,3 +1,8 @@
+//HOW TO WIN = WHO EVER GETS TO 10 PONG FIRST WINS
+//LEFT PLAYER = 1 AND Q 
+//RIGHT PLAYER = 0 AND P 
+//cap lock has to be OFF
+
 class RandomPong {
 
   // Variables to store the main objects in the game (the paddles and ball)
@@ -17,7 +22,6 @@ class RandomPong {
   // A boolean to track whether we should return to the menu
   boolean returnToMenu = false;
   PImage  img;
-  //fill = paddleColor;
 
   // BasicPong()
   //
@@ -37,6 +41,7 @@ class RandomPong {
   // Handles all the magic of making the paddles and ball move, checking
   // if the ball has hit a paddle, and displaying everything.
 
+  //THE FRAME RATE: IT IS WHAT MAKES THE PADDLES, BALL AND BACKGROUND CHANGE 
   void update() {
     if (!gameOver) {
       // Fill the background each frame so we have animation

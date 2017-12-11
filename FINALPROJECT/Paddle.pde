@@ -40,7 +40,7 @@ class Paddle {
   // Sets the position and controls based on arguments,
   // starts the velocity at 0
 
-  //BASIC AND BLUE PONG
+  //BASIC AND BLUE PONG AND RANDOM PONG
   Paddle(int _x, int _y, char _upKey, char _downKey) { //Constructor
     x = _x;
     y = _y;

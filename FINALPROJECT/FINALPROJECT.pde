@@ -1,6 +1,16 @@
 // Pong(s)
 // by JESSICA FILIPPELLI
-//
+
+// Artist's Statement
+
+
+
+
+
+
+
+
+
 // A version of Pong that can run multiple versions of the game.
 // Each version is a class and the game is able to show a title screen,
 // a menu for selection versions, and the versions themselves.

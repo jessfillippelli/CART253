@@ -1,3 +1,5 @@
+//LEADERBOARD TAB FOR THE ROTATING PONG
+
 class LeaderBoard {
 
   int x= 170;
