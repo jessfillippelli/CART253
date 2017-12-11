@@ -79,7 +79,7 @@ class TenPong {
     text(middlePaddle.score, middlePaddle.x, middlePaddle.y );
 
 
-    //this is after you win
+    //this is after you win the game
     if (middlePaddle.score >= numberOfPointsToWin) {
       background(255, 182, 193);
       img = loadImage("game_over.jpg");

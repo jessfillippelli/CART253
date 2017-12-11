@@ -200,6 +200,7 @@ class Paddle {
     }
   }
 
+  // FOR THE ROTATING PONG PADDLE 
   void keyPressedRotatePong() {
     // Check if the key is our up key
     if (key == CODED) {
@@ -224,6 +225,8 @@ class Paddle {
     }
   }
 
+ 
+  //ROTATING PONG   
   void keyReleasedRotatePong() {
 
     // Check if the key is our up key and the paddle is moving up
