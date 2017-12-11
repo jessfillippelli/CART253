@@ -19,7 +19,6 @@ class Paddle {
   int y;
   int vx;
   int vy;
-  //fill = paddleColor;
 
   // The fill color of the paddle
   color paddleColor = color(255);

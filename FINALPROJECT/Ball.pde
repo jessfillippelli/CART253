@@ -12,8 +12,8 @@ class Ball {
   int SIZE = 16;
   Ball ball;
   Ball[] Balls= new Ball[9]; // added this for the array
-  PImage img;
-  PImage img2;
+  PImage img; //RANDOM PONG
+  PImage img2; //RANDOM PONG
   
   //RANDON PONG
   String shape = "rect";
