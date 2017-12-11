@@ -37,7 +37,7 @@ class RotatingPong {
   }
 
   void update() {
-
+//TIMER CODE
     // update amount of time Passed::
 
     timePassed = millis() - startTimer;

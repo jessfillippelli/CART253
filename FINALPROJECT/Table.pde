@@ -96,6 +96,6 @@ class LeaderBoard {
     textSize(20);
     text("YOU", 244, 360); //first number (number has to up) its the width the 2nd number is the height
     textSize(20);
-    text(m+":"+s, 395, 360);
+    text(m+":"+s, 395, 360); //TIMER DISPLAY
   }
 }
